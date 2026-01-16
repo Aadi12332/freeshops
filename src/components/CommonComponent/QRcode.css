@@ -1,0 +1,58 @@
+.qrcode-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.qrcode-center {
+  text-align: center;
+}
+
+.qrcode-center h6 {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.4000000059604645px;
+  color: #e25845;
+  margin: 0;
+  font-family: Quicksand;
+}
+
+.qrcode-center p {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 24px;
+  color: #e25845;
+  margin: 0;
+  font-family: Quicksand;
+}
+
+@media (max-width: 768px) {
+  .qrcode-container {
+    flex-direction: column;       /* stack vertically */
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .qrcode-left {
+    display: flex;
+    justify-content: center;
+  }
+
+  .qrcode-center h6 {
+    font-size: 16px;    
+    line-height: 22px;
+  }
+
+  .qrcode-center p {
+    font-size: 12px;    
+    line-height: 18px;
+    padding: 0 10px;     /* thoda spacing mobile ke liye */
+  }
+
+  .qrcode-right img {
+    width: 80px;         /* smaller QR image */
+    height: 80px;
+  }
+}

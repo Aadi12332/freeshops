@@ -1,0 +1,140 @@
+.settings-container {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.section p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.option button {
+  background: none;
+  border: none;
+  color: #e25845; /* Updated color */
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.option button:hover {
+  text-decoration: underline;
+  color: #b33c35; /* Slightly darker shade for hover effect */
+}
+.settings-container {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #111;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.section p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.option button {
+  background: none;
+  border: none;
+  color: #e25845; /* Normal */
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.option button:hover {
+  text-decoration: underline;
+  color: #b33c35; /* Darker on hover */
+}
+
+/* ---------------------- */
+/* 🌙 Dark Mode Styling */
+/* ---------------------- */
+/* @media (prefers-color-scheme: dark) {
+  .settings-container {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+  }
+
+  .section p {
+    color: #bbb;
+  }
+
+  .option {
+    border-bottom: 1px solid #444;
+  }
+
+  .option button {
+    color: #ff6b5a;
+  }
+
+  .option button:hover {
+    color: #ff3b2e;
+  }
+} */
+
+/* ✅ If you prefer manual toggle instead of system theme:
+   Just add `.dark-mode` class to <body> or wrapper */
+.dark-mode .settings-container {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 10px;
+}
+
+.dark-mode .section p {
+  color: #bbb;
+}
+
+.dark-mode .option {
+  border-bottom: 1px solid #444;
+}
+
+.dark-mode .option button {
+  color: #ff6b5a;
+}
+
+.dark-mode .option button:hover {
+  color: #ff3b2e;
+}

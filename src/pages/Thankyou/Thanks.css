@@ -1,0 +1,43 @@
+/** @format */
+
+.thanks-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.thanks-main-img {
+  width: 168px;
+  height: 168px;
+  overflow: hidden;
+}
+
+.thanks-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thanks-main-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.thanks-main-text h1 {
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: -0.4000000059604645px;
+  color: #333333;
+  margin: 0;
+}
+
+.thanks-main-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}

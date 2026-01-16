@@ -1,0 +1,231 @@
+/** @format */
+
+.help-container {
+  width: 90%;
+  margin: auto;
+}
+
+.help-first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.help-first-seachbar {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #e25845;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.help-first-seachbar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.help-first-seachbar svg {
+  font-size: 25px;
+  color: #565656;
+}
+
+.help-first-seachbar input::placeholder {
+  font-weight: 400;
+  font-size: 20px;
+  color: #565656;
+  margin: 0;
+}
+
+.help-first-seachbar-btn button {
+  width: auto;
+  height: auto;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  background: #e25845;
+  outline: none;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0;
+  cursor: pointer;
+}
+
+.help-second {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.help-second-div {
+  width: 20%;
+  height: 200px;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px 5px #3e3c6214;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.help-second-div-img {
+  width: 98px;
+  height: 98px;
+  overflow: hidden;
+}
+
+.help-second-div-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.help-second-div-content h6 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #121212;
+  margin: 0;
+  text-align: center;
+}
+
+.help-second-div-content p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #979797;
+  margin: 0;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.help-third {
+  margin-top: 4rem;
+}
+
+.help-third h5 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #121212;
+  margin: 0;
+  text-align: center;
+}
+
+.help-third-divs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.help-third-div h6 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #121212;
+  margin: 0;
+}
+
+.help-third-div p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #979797;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.help-fouth-divs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.help-fouth-div {
+  width: auto;
+  height: auto;
+  padding: 21px 0px 78px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px 5px #3e3c6214;
+  background: #ffffff;
+}
+
+.help-fouth-div h6 {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  color: #121212;
+  margin: 0;
+}
+@media screen and (max-width:767px) {
+  .help-second{
+    flex-direction: column;
+  }
+  .help-second-div{
+    width: 100%;
+  }
+  .help-first-seachbar{
+    width: 100%;
+  }
+  .help-first{
+    flex-direction: column;
+  }
+}
+/* --- DARK MODE for Help Page --- */
+
+/* Main titles and headings */
+body.dark-mode .help-third h5,
+body.dark-mode .help-second-div-content h6,
+body.dark-mode .help-third-div h6,
+body.dark-mode .help-fouth-div h6 {
+  color: #ffffff;
+}
+
+/* Paragraph text */
+body.dark-mode .help-second-div-content p,
+body.dark-mode .help-third-div p {
+  color: #9ca3af;
+}
+
+/* Search bar styles */
+body.dark-mode .help-first-seachbar {
+  background-color: #1f2937; /* Added a dark background */
+  border-color: #f87171; /* Made the border brighter */
+}
+
+body.dark-mode .help-first-seachbar input {
+  background-color: transparent; /* Match input background to its container */
+  color: #ffffff;
+}
+
+body.dark-mode .help-first-seachbar svg {
+  color: #9ca3af;
+}
+
+body.dark-mode .help-first-seachbar input::placeholder {
+  color: #9ca3af;
+}
+
+/* Card styles */
+body.dark-mode .help-second-div,
+body.dark-mode .help-fouth-div {
+  background: #1f2937;
+  box-shadow: none; /* Remove the light shadow */
+  border: 1px solid #374151; /* Add a subtle dark border for definition */
+}

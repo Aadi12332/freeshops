@@ -1,0 +1,949 @@
+/** @format */
+
+.findjob-container {
+  width: 90%;
+  margin: auto;
+  margin-top: 1rem;
+  max-width: 1400px;
+}
+
+.findjob-jobs {
+  margin-top: 2rem;
+}
+
+.findjob-jobs-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.findjob-jobs-location h6 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 33px;
+  color: #e25845;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+.findjob-jobs-location svg {
+  font-size: 28px;
+  color: #e25845;
+  flex-shrink: 0;
+}
+
+.findjob-jobs-div {
+  margin-top: 1.5rem;
+}
+
+.findjob-job {
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid #dfdfdf;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  background: #ffffff;
+}
+
+.findjob-job:hover {
+  box-shadow: 0 4px 12px rgba(226, 88, 69, 0.1);
+  transform: translateY(-2px);
+}
+
+.findjob-job-image {
+  width: 45%;
+  height: 242px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.findjob-job-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.findjob-job:hover .findjob-job-image img {
+  transform: scale(1.05);
+}
+
+.findjob-job-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.findjob-job-right-btn {
+  width: 150px;
+  height: auto;
+  padding: 10px;
+  border-radius: 4px;
+  background: #e2584533;
+  align-self: flex-start;
+}
+
+.findjob-job-right-btn h6 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: #e25845;
+  margin: 0;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+}
+
+.findjob-job-right h4 {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 38px;
+  color: #121212;
+  margin: 0;
+  margin-top: 1rem;
+  font-family: Montserrat, sans-serif;
+}
+
+.findjob-job-right p {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 38px;
+  color: #121212;
+  margin: 0;
+  margin-top: 0.5rem;
+  font-family: Quicksand, sans-serif;
+}
+
+.findjob-job-right h5 {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33px;
+  color: #121212;
+  margin: 0;
+  margin-top: 0.5rem;
+  font-family: Quicksand, sans-serif;
+}
+
+.jobdetails-first {
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.jobdetails-first-img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.jobdetails-first-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.jobdetails-first-right {
+  flex: 1;
+}
+
+.jobdetails-first-right h6 {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 38px;
+  color: #000000;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+.jobdetails-first-right p {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 29px;
+  color: #000000;
+  margin: 0;
+  margin-top: 0.8rem;
+  font-family: Quicksand, sans-serif;
+}
+
+.jobdetails-second {
+  margin-bottom: 1rem;
+}
+
+.jobdetails-second h6 {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 38px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 0.8rem;
+  font-family: Montserrat, sans-serif;
+}
+
+.jobdetails-second-divs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.jobdetails-second-divs p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 33px;
+  color: #000000;
+  margin: 0;
+  font-family: Quicksand, sans-serif;
+}
+
+.jobdetails-btn {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.jobdetails-btn button {
+  width: 50%;
+  max-width: 400px;
+  min-width: 200px;
+  padding: 12px 20px;
+  border-radius: 80px;
+  background: #e25845;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 43px;
+  color: #ffffff;
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: Montserrat, sans-serif;
+}
+
+.jobdetails-btn button:hover {
+  background: #d44a37;
+  transform: translateY(-2px);
+}
+
+.jobdetails-btn button:active {
+  transform: translateY(0);
+}
+
+.jobdetails-jobs-head {
+  margin-top: 1rem;
+}
+
+.jobdetails-jobs-head h5 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: #000000;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.no-jobs-found {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-family: Quicksand, sans-serif;
+  font-size: 18px;
+}
+
+/* Desktop (1200px+) - Keep original styles */
+@media (min-width: 1200px) {
+  .findjob-container {
+    width: 85%;
+  }
+}
+
+/* Large Desktop (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .findjob-jobs-location h6 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  
+  .findjob-jobs-location svg {
+    font-size: 26px;
+  }
+  
+  .findjob-job {
+    gap: 1.5rem;
+    padding: 0.8rem;
+  }
+  
+  .findjob-job-image {
+    height: 200px;
+  }
+  
+  .findjob-job-right h4 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  
+  .findjob-job-right p {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  
+  .findjob-job-right h5 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .findjob-job-right-btn {
+    width: 130px;
+  }
+  
+  .findjob-job-right-btn h6 {
+    font-size: 18px;
+  }
+  
+  .jobdetails-btn button {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .findjob-container {
+    width: 95%;
+  }
+  
+  .findjob-jobs-location {
+    gap: 0.4rem;
+  }
+  
+  .findjob-jobs-location h6 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  
+  .findjob-jobs-location svg {
+    font-size: 24px;
+  }
+  
+  .findjob-job {
+    gap: 1.2rem;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .findjob-job-image {
+    width: 40%;
+    height: 180px;
+  }
+  
+  .findjob-job-right h4 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 0.8rem;
+  }
+  
+  .findjob-job-right p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .findjob-job-right h5 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
+  .findjob-job-right-btn {
+    width: 120px;
+    padding: 8px;
+  }
+  
+  .findjob-job-right-btn h6 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .jobdetails-first {
+    gap: 1.5rem;
+  }
+  
+  .jobdetails-first-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .jobdetails-first-right h6 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  
+  .jobdetails-first-right p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
+  .jobdetails-second h6 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  
+  .jobdetails-second-divs p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  
+  .jobdetails-btn button {
+    width: 60%;
+    font-size: 24px;
+    line-height: 32px;
+    padding: 10px 16px;
+  }
+  
+  .jobdetails-jobs-head h5 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+/* Small Tablet (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .findjob-container {
+    width: 95%;
+    margin-top: 0.8rem;
+  }
+  
+  .findjob-jobs {
+    margin-top: 1.5rem;
+  }
+  
+  .findjob-jobs-location h6 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  .findjob-jobs-location svg {
+    font-size: 22px;
+  }
+  
+  .findjob-job {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .findjob-job-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .findjob-job-right h4 {
+    font-size: 20px;
+    line-height: 26px;
+    margin-top: 0.5rem;
+  }
+  
+  .findjob-job-right p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .findjob-job-right h5 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  
+  .findjob-job-right-btn {
+    width: 110px;
+    padding: 8px;
+  }
+  
+  .findjob-job-right-btn h6 {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .jobdetails-first {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .jobdetails-first-img {
+    width: 80px;
+    height: 80px;
+    align-self: center;
+  }
+  
+  .jobdetails-first-right h6 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .jobdetails-first-right p {
+    font-size: 17px;
+    line-height: 24px;
+    margin-top: 0.5rem;
+  }
+  
+  .jobdetails-second h6 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .jobdetails-second-divs p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .jobdetails-btn button {
+    width: 70%;
+    font-size: 22px;
+    line-height: 28px;
+    padding: 10px 16px;
+  }
+  
+  .jobdetails-jobs-head h5 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+/* Mobile (480px - 575px) */
+@media (min-width: 480px) and (max-width: 575.98px) {
+  .findjob-container {
+    width: 96%;
+    margin-top: 0.6rem;
+  }
+  
+  .findjob-jobs {
+    margin-top: 1.2rem;
+  }
+  
+  .findjob-jobs-location {
+    gap: 0.3rem;
+  }
+  
+  .findjob-jobs-location h6 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .findjob-jobs-location svg {
+    font-size: 20px;
+  }
+  
+  .findjob-job {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+    border-radius: 12px;
+  }
+  
+  .findjob-job-image {
+    width: 100%;
+    height: 180px;
+    border-radius: 6px;
+  }
+  
+  .findjob-job-right h4 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 0.4rem;
+  }
+  
+  .findjob-job-right p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  
+  .findjob-job-right h5 {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  
+  .findjob-job-right-btn {
+    width: 100px;
+    padding: 6px;
+  }
+  
+  .findjob-job-right-btn h6 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  
+  .jobdetails-first {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+  }
+  
+  .jobdetails-first-img {
+    width: 70px;
+    height: 70px;
+    align-self: center;
+  }
+  
+  .jobdetails-first-right h6 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .jobdetails-first-right p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 0.4rem;
+  }
+  
+  .jobdetails-second h6 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 0.6rem;
+  }
+  
+  .jobdetails-second-divs p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  
+  .jobdetails-btn {
+    margin-top: 1.5rem;
+  }
+  
+  .jobdetails-btn button {
+    width: 80%;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 10px 14px;
+  }
+  
+  .jobdetails-jobs-head h5 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  .loading-spinner {
+    padding: 1.5rem;
+  }
+  
+  .no-jobs-found {
+    padding: 1.5rem;
+    font-size: 16px;
+  }
+}
+
+/* Small Mobile (320px - 479px) */
+@media (max-width: 479.98px) {
+  .findjob-container {
+    width: 98%;
+    margin-top: 0.5rem;
+  }
+  
+  .findjob-jobs {
+    margin-top: 1rem;
+  }
+  
+  .findjob-jobs-location {
+    gap: 0.3rem;
+  }
+  
+  .findjob-jobs-location h6 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
+  .findjob-jobs-location svg {
+    font-size: 18px;
+  }
+  
+  .findjob-jobs-div {
+    margin-top: 1rem;
+  }
+  
+  .findjob-job {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+  
+  .findjob-job-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 6px;
+  }
+  
+  .findjob-job-right h4 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 0.3rem;
+  }
+  
+  .findjob-job-right p {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  
+  .findjob-job-right h5 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .findjob-job-right-btn {
+    width: 90px;
+    padding: 5px;
+  }
+  
+  .findjob-job-right-btn h6 {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  
+  .jobdetails-first {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0;
+  }
+  
+  .jobdetails-first-img {
+    width: 60px;
+    height: 60px;
+    align-self: center;
+  }
+  
+  .jobdetails-first-right h6 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .jobdetails-first-right p {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 0.3rem;
+  }
+  
+  .jobdetails-second {
+    margin-bottom: 0.8rem;
+  }
+  
+  .jobdetails-second h6 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .jobdetails-second-divs {
+    gap: 0.3rem;
+  }
+  
+  .jobdetails-second-divs p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .jobdetails-btn {
+    margin-top: 1.2rem;
+  }
+  
+  .jobdetails-btn button {
+    width: 90%;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 8px 12px;
+    border-radius: 40px;
+  }
+  
+  .jobdetails-jobs-head {
+    margin-top: 0.8rem;
+  }
+  
+  .jobdetails-jobs-head h5 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  .loading-spinner {
+    padding: 1rem;
+  }
+  
+  .no-jobs-found {
+    padding: 1rem;
+    font-size: 15px;
+  }
+}
+
+/* Very Small Mobile (320px and below) */
+@media (max-width: 320px) {
+  .findjob-container {
+    width: 100%;
+    margin-top: 0.4rem;
+    padding: 0 0.5rem;
+  }
+  
+  .findjob-jobs-location h6 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .findjob-jobs-location svg {
+    font-size: 16px;
+  }
+  
+  .findjob-job {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .findjob-job-image {
+    height: 140px;
+  }
+  
+  .findjob-job-right h4 {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .findjob-job-right p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .findjob-job-right h5 {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .findjob-job-right-btn {
+    width: 80px;
+    padding: 4px;
+  }
+  
+  .findjob-job-right-btn h6 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .jobdetails-first-img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .jobdetails-first-right h6 {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .jobdetails-first-right p {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .jobdetails-second h6 {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .jobdetails-second-divs p {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  
+  .jobdetails-btn button {
+    width: 95%;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px 10px;
+  }
+  
+  .jobdetails-jobs-head h5 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+/* --- DARK MODE STYLES for Find Job Page --- */
+
+/* General Text Color Changes */
+body.dark-mode .findjob-job-right h4,
+body.dark-mode .findjob-job-right p,
+body.dark-mode .findjob-job-right h5,
+body.dark-mode .jobdetails-first-right h6,
+body.dark-mode .jobdetails-first-right p,
+body.dark-mode .jobdetails-second h6,
+body.dark-mode .jobdetails-second-divs p,
+body.dark-mode .jobdetails-jobs-head h5 {
+  color: #ffffff;
+}
+
+body.dark-mode .no-jobs-found {
+  color: #9ca3af;
+}
+
+/* Brand Color Adjustments for Text & Icons */
+body.dark-mode .findjob-jobs-location h6,
+body.dark-mode .findjob-jobs-location svg,
+body.dark-mode .findjob-job-right-btn h6 {
+  color: #f87171; /* Brighter red for better contrast */
+}
+
+/* Job Card Styling */
+body.dark-mode .findjob-job {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .findjob-job:hover {
+  box-shadow: 0 4px 16px rgba(248, 113, 113, 0.15); /* Brighter glow effect */
+  transform: translateY(-2px);
+}
+
+/* Semi-transparent Background Adjustment */
+body.dark-mode .findjob-job-right-btn {
+  background: #f8717126; /* Using the brighter red at ~15% opacity */
+}
+
+/* Job Details Section Styling */
+body.dark-mode .jobdetails-first {
+  border-top-color: #374151;
+  border-bottom-color: #374151;
+}
+
+body.dark-mode .jobdetails-first-img {
+  background: #374151; /* Dark background for image placeholder */
+}

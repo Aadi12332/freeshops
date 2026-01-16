@@ -1,0 +1,270 @@
+/* Inbox Container */
+.inbox-container {
+  padding: 24px;
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Breadcrumb */
+.inbox-breadcrumb {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.breadcrumb-separator {
+  margin: 0 8px;
+}
+
+.breadcrumb-current {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* Page Title */
+.inbox-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+/* Main Box */
+.inbox-box {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Tabs */
+.inbox-tabs {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.inbox-tab {
+  flex: 1;
+  padding: 16px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #64748b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.inbox-tab:hover {
+  background-color: #f1f5f9;
+}
+
+.inbox-tab.active {
+  color: #e25845;
+  background-color: #ffffff;
+}
+
+.inbox-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #e25845;
+}
+
+/* Content Area */
+.inbox-content {
+  padding: 0;
+  min-height: 400px;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.empty-heading {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.empty-text {
+  color: #64748b;
+  font-size: 16px;
+  max-width: 400px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Message Items */
+.message-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.message-item:hover {
+  background-color: #f8fafc;
+}
+
+.message-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #e25845;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  margin-right: 16px;
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.message-content {
+  flex: 1;
+}
+
+.message-sender {
+  font-weight: 600;
+  font-size: 16px;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.message-text {
+  color: #475569;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.message-time {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Notification Items */
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+  background-color: #f8fafc;
+}
+
+.notification-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #4a4a4a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 14px;
+}
+
+.notification-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notification-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+.notification-text {
+  font-size: 14px;
+  color: #475569;
+  margin: 0;
+}
+
+.notification-time {
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+/* Dark Mode */
+body.dark-mode .inbox-container {
+  background-color: #121212;
+}
+
+body.dark-mode .inbox-title,
+body.dark-mode .message-sender,
+body.dark-mode .notification-title {
+  color: #ffffff;
+}
+
+body.dark-mode .inbox-box {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode .inbox-tab {
+  color: #aaaaaa;
+}
+
+body.dark-mode .inbox-tab.active {
+  color: #e25845;
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .message-text,
+body.dark-mode .notification-text {
+  color: #dddddd;
+}
+
+body.dark-mode .message-time,
+body.dark-mode .notification-time {
+  color: #aaaaaa;
+}
+
+body.dark-mode .message-item:hover,
+body.dark-mode .notification-item:hover {
+  background-color: #2a2a2a;
+}

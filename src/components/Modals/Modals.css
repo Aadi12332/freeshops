@@ -1,0 +1,1404 @@
+/** @format */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.login-container-modal {
+  /* padding: 0.8rem; */
+}
+
+.login-modal-top {
+  position: relative;
+  padding: 0 1rem;
+}
+
+.login-modal-top h6 {
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
+
+.login-modal-top p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.login-modal-top svg {
+  font-size: 28px;
+  color: #000000;
+  margin: 0;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.login-modal-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.login-modal-image {
+  width: 115px;
+  height: 114px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.login-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-modal-face,
+.login-modal-google,
+.login-modal-apple,
+.login-modal-email,
+.login-modal-sinup-btn,
+.login-modal-login-btn {
+  width: 100%;
+  height: 56px;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.login-modal-face {
+  background: #156ad9;
+}
+
+.login-modal-face p,
+.login-modal-google p,
+.login-modal-apple p,
+.login-modal-email p,
+.login-modal-sinup-btn p,
+.login-modal-login-btn p {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.login-modal-face svg,
+.login-modal-google svg,
+.login-modal-apple svg,
+.login-modal-email svg {
+  font-size: 28px;
+  color: #ffffff;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.login-modal-google {
+  background: #4c8bf5;
+}
+
+.login-modal-google svg {
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 2px;
+  /* If Google icon is SVG and uses fill:currentColor, you'll need to set its color e.g. color: #4285F4; */
+}
+
+.login-modal-apple {
+  background: transparent;
+  border: 2px solid #000000;
+}
+
+.login-modal-apple p {
+  color: #000000;
+}
+
+.login-modal-apple svg {
+  color: #000000;
+}
+
+.login-modal-email {
+  background: transparent;
+  border: 2px solid #e25845;
+}
+
+.login-modal-email p {
+  color: #e25845;
+}
+
+.login-modal-email svg {
+  color: #e25845;
+}
+
+.login-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.login-modal-content p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24.6px;
+  color: #585858;
+  margin: 0;
+  text-align: center;
+}
+
+.login-modal-sinup-btn {
+  background: #e25845;
+}
+
+.login-modal-login-btn {
+  border: 2px solid #e25845;
+}
+
+.login-modal-login-btn p {
+    color: #e25845;
+}
+
+
+.login-modal-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.login-modal-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-modal-input label {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
+  display: flex;
+}
+
+.login-modal-input-in {
+  width: 100%;
+  height: 56px;
+  border-radius: 10px;
+  border: 2px solid #e25845;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.login-modal-input-in span {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0 0 0 0.5rem;
+  border-bottom: 1px solid #000000;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.login-modal-input-in input {
+  flex: 1;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
+  background: transparent;
+  min-width: 0;
+}
+
+.login-modal-button {
+    width: 100%;
+}
+
+.login-modal-button button {
+  width: 100%;
+  height: 46px;
+  border-radius: 100px;
+  background: #e25845;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #ffffff;
+  margin: 0;
+  cursor: pointer;
+}
+
+.login-modal-button button:disabled {
+  background-color: #c7c7c7;
+  cursor: not-allowed;
+}
+
+.login-modal-button p {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #e25845;
+  margin: 0;
+  text-align: center;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.locationget-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+}
+
+.location-img img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.locationget-modal h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  color: #1e1e1e;
+  margin: 0;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.locationget-modal span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
+
+.locationget-modal input {
+  width: 100%;
+  max-width: 320px;
+  height: 45px;
+  border-radius: 10px;
+  background: #c2c2c247;
+  outline: none;
+  border: none;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.locationget-modal input::placeholder {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #8d8d8d;
+  margin: 0;
+}
+
+.location-btn-modal {
+  width: auto;
+  max-width: 300px;
+  height: auto;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: 1px solid #e25845;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.location-btn-modal p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #e25845;
+  margin: 0;
+  margin-right: 8px;
+}
+
+.location-btn-modal svg {
+  font-size: 16px;
+  color: #e25845;
+}
+
+.category-container-modal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+}
+
+.category-modal-div {
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1px solid #aaaaaa;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.category-modal-div.selected {
+  background-color: #f04e31;
+  color: white;
+  border: 1px solid #f04e31;
+}
+
+.category-modal-div.selected p {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.category-modal-div p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #a0a0a0;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.delete-modal {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-modal h6 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.4;
+  text-align: center;
+  color: #000000e5;
+  margin: 0;
+}
+
+.delete-modal-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.delete-modal-btns button {
+  width: 120px;
+  height: 50px;
+  border-radius: 44px;
+  outline: none;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 0.25rem 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.delete-modal-btns button:first-child {
+  border: none;
+  color: #ffffff;
+  background: #e25845;
+}
+
+.delete-modal-btns button:last-child {
+  border: 1px solid #e25845;
+  color: #e25845;
+  background: transparent;
+}
+
+.delete-modal-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.delete-modal-final p {
+  font-weight: 500;
+  font-size: 28px;
+  text-align: center;
+  color: #000000b2;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.delete-modal-gif {
+  width: 126px;
+  height: 119px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.delete-modal-gif img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==== sidebar canvas ===== */
+.sidebar-canvas {
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+}
+.sidebar-canvas .close_btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.sidebar-canvas .close_btn svg {
+  cursor: pointer;
+  font-size: 24px;
+  color: #e25845;
+}
+
+.sidebar-canvas .remaining_content {
+  margin-top: 20px;
+}
+.sidebar-canvas .remaining_content .search_container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.sidebar-canvas .remaining_content .search_container .free_shipping span {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Quicksand, sans-serif !important;
+  color: #e25845;
+}
+
+.sidebar-canvas .remaining_content .search_container .search_bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #121212;
+  padding: 8px 12px;
+  border-radius: 50px;
+  outline: none;
+  width: 100%;
+}
+.sidebar-canvas .remaining_content .search_container .search_bar input {
+  flex: 1;
+  border: none;
+  border-right: 1px solid #e2e2e2;
+  outline: none;
+  font-size: 15px;
+  font-family: Quicksand, sans-serif !important;
+  color: #121212;
+  font-weight: 500;
+  margin: 0;
+  padding-right: 8px;
+  min-width: 0;
+}
+.sidebar-canvas .remaining_content .search_container .search_bar select {
+  flex-basis: 110px;
+  flex-shrink: 0;
+  outline: none;
+  border: none;
+  text-align: center;
+  color: #121212;
+  font-family: Quicksand, sans-serif !important;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 10px;
+}
+.sidebar-canvas .remaining_content .search_container .search_bar .search_icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e25845;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.sidebar-canvas
+  .remaining_content
+  .search_container
+  .search_bar
+  .search_icon
+  svg {
+  color: #fff;
+  font-size: 16px;
+}
+.sidebar-canvas .remaining_content .social_links {
+  margin-top: 20px;
+  width: 100%;
+}
+.sidebar-canvas .remaining_content .social_links ul {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-canvas .remaining_content .social_links ul li a {
+  font-size: 16px;
+  color: #121212;
+  font-family: Quicksand, sans-serif !important;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  padding: 8px 0;
+}
+.sidebar-canvas .remaining_content .social_links ul li.active a {
+  font-size: 20px;
+  font-weight: 900;
+  color: #e25845;
+}
+.sidebar-canvas .remaining_content .social_links .login_btn {
+  margin-top: 25px;
+  background-color: #e25845;
+  border: 1px solid #e25845;
+  padding: 12px;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  font-family: Quicksand, sans-serif !important;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* ======================== */
+.otp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.otp-input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.otp-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* ======================== */
+/* MOBILE RESPONSIVE STYLES */
+/* ======================== */
+
+/* General Tablet and Larger Phone Adjustments */
+@media (max-width: 768px) {
+  .login-modal-top h6 {
+    font-size: 28px;
+  }
+  .login-modal-top p {
+    font-size: 18px;
+  }
+  .login-modal-top svg {
+    font-size: 26px;
+  }
+
+  .login-modal-face p,
+  .login-modal-google p,
+  .login-modal-apple p,
+  .login-modal-email p,
+  .login-modal-sinup-btn p,
+  .login-modal-login-btn p {
+    font-size: 18px;
+  }
+
+  .login-modal-face svg,
+  .login-modal-google svg,
+  .login-modal-apple svg,
+  .login-modal-email svg {
+    font-size: 24px;
+    left: 18px;
+  }
+
+  .login-modal-input label {
+    font-size: 17px;
+  }
+  .login-modal-input-in input,
+  .login-modal-input-in span {
+    font-size: 17px;
+  }
+
+  .login-modal-button button {
+    font-size: 18px;
+    height: 44px;
+  }
+  .login-modal-button p {
+    font-size: 19px;
+  }
+
+  .locationget-modal h3 {
+    font-size: 22px;
+  }
+  .locationget-modal span {
+    font-size: 15px;
+  }
+  .locationget-modal input {
+    height: 42px;
+  }
+  .location-btn-modal p {
+    font-size: 15px;
+  }
+
+  .delete-modal h6 {
+    font-size: 26px;
+  }
+  .delete-modal-btns button {
+    font-size: 17px;
+    height: 48px;
+    width: 110px;
+  }
+  .delete-modal-final p {
+    font-size: 24px;
+  }
+
+  .sidebar-canvas .remaining_content .search_container .search_bar select {
+    flex-basis: 100px;
+    font-size: 14px;
+  }
+  .sidebar-canvas .remaining_content .search_container .search_bar input {
+    font-size: 14px;
+  }
+   .sidebar-canvas .remaining_content .social_links ul li a {
+    font-size: 15px;
+   }
+   .sidebar-canvas .remaining_content .social_links ul li.active a {
+    font-size: 18px;
+   }
+   .sidebar-canvas .remaining_content .social_links .login_btn {
+    font-size: 15px;
+    padding: 10px;
+   }
+}
+
+/* Smaller Phone Adjustments */
+@media (max-width: 480px) {
+  .login-modal-top {
+    padding: 0 0.5rem;
+  }
+  .login-modal-top h6 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+  .login-modal-top p {
+    font-size: 14px;
+    right: 0.5rem;
+  }
+  .login-modal-top svg {
+    font-size: 20px;
+    left: 0.5rem;
+  }
+
+  .login-modal-div,
+  .locationget-modal,
+  .delete-modal,
+  .category-container-modal {
+    width: 90%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .locationget-modal {
+      max-width: 300px;
+  }
+  .delete-modal {
+      max-width: 280px;
+      padding: 0.8rem;
+  }
+   .category-container-modal {
+       gap: 0.5rem;
+   }
+
+
+  .login-modal-image {
+    width: 80px;
+    height: 79px;
+  }
+
+  .login-modal-face,
+  .login-modal-google,
+  .login-modal-apple,
+  .login-modal-email,
+  .login-modal-sinup-btn,
+  .login-modal-login-btn {
+    height: 50px;
+    padding: 0 0.8rem;
+  }
+
+  .login-modal-face p,
+  .login-modal-google p,
+  .login-modal-apple p,
+  .login-modal-email p,
+  .login-modal-sinup-btn p,
+  .login-modal-login-btn p {
+    font-size: 15px;
+  }
+
+  .login-modal-face svg,
+  .login-modal-google svg,
+  .login-modal-apple svg,
+  .login-modal-email svg {
+    font-size: 20px;
+    left: 12px;
+  }
+
+  .login-modal-content p {
+    font-size: 15px;
+  }
+
+  .login-modal-input label {
+    font-size: 15px;
+  }
+  .login-modal-input-in {
+    height: 50px;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  .login-modal-input-in input,
+  .login-modal-input-in span {
+    font-size: 15px;
+  }
+
+  .login-modal-button button {
+    font-size: 16px;
+    height: 42px;
+  }
+  .login-modal-button p {
+    font-size: 17px;
+    margin-top: 0.8rem;
+  }
+
+  .locationget-modal h3 {
+    font-size: 18px;
+  }
+  .locationget-modal span {
+    font-size: 13px;
+  }
+  .locationget-modal input {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+  }
+  .locationget-modal input::placeholder {
+      font-size: 13px;
+  }
+  .location-btn-modal {
+    padding: 10px 18px;
+    width: 100%;
+    max-width: 250px;
+  }
+  .location-btn-modal p {
+    font-size: 14px;
+  }
+  .location-btn-modal svg {
+    font-size: 14px;
+  }
+
+  .category-modal-div {
+    padding: 8px 14px;
+  }
+  .category-modal-div p {
+    font-size: 13px;
+  }
+
+  .delete-modal h6 {
+    font-size: 20px;
+  }
+  .delete-modal-btns {
+    gap: 0.5rem;
+    flex-direction: column; /* Buttons stack in delete modal */
+    width: 100%;
+  }
+  .delete-modal-btns button {
+    font-size: 15px;
+    height: 42px;
+    width: 100%;
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .delete-modal-final p {
+    font-size: 18px;
+  }
+  .delete-modal-gif {
+    width: 90px;
+    height: 85px;
+  }
+
+  .sidebar-canvas {
+    padding: 15px;
+  }
+  .sidebar-canvas .close_btn svg {
+    font-size: 22px;
+  }
+  .sidebar-canvas .remaining_content .search_container .free_shipping span {
+      font-size: 13px;
+  }
+
+  /* Sidebar Search Bar - Mobile Inline Adjustments */
+  .sidebar-canvas .remaining_content .search_container .search_bar {
+    flex-direction: row; 
+    gap: 4px;            
+    padding: 4px 10px;   
+    align-items: center; 
+  }
+  .sidebar-canvas .remaining_content .search_container .search_bar input {
+    flex: 1; 
+    border-right: 1px solid #e2e2e2; 
+    border-bottom: none; 
+    padding-bottom: 0; 
+    width: auto; 
+    text-align: left;
+    font-size: 13px; 
+    padding-right: 5px; 
+  }
+  .sidebar-canvas .remaining_content .search_container .search_bar select {
+    flex-basis: 80px; 
+    flex-shrink: 0;
+    width: auto; 
+    padding: 0 5px; 
+    text-align: center; 
+    font-size: 13px; 
+  }
+  .sidebar-canvas .remaining_content .search_container .search_bar .search_icon {
+    width: 25px;        
+    height: 25px;       
+    border-radius: 50%; 
+    margin-top: 0;      
+  }
+  .sidebar-canvas .remaining_content .search_container .search_bar .search_icon svg {
+    font-size: 14px; 
+  }
+  /* End Sidebar Search Bar Adjustments */
+
+   .sidebar-canvas .remaining_content .social_links ul {
+      gap: 8px;
+  }
+   .sidebar-canvas .remaining_content .social_links ul li a {
+    font-size: 14px;
+    padding: 6px 0;
+   }
+   .sidebar-canvas .remaining_content .social_links ul li.active a {
+    font-size: 16px;
+   }
+   .sidebar-canvas .remaining_content .social_links .login_btn {
+    font-size: 15px;
+    padding: 10px;
+   }
+
+  .otp-container {
+    gap: 8px;
+    margin: 15px 0;
+  }
+  .otp-input {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 6px;
+  }
+}/* Styling for the new SidebarCanvas component */
+.custom-sidebar .offcanvas-body {
+  padding: 0;
+}
+
+/* Sidebar Search Bar */
+.search_bar_sidebar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.search_bar_sidebar input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.search_icon_sidebar {
+  padding: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Sidebar Navigation Links */
+.sidebar-nav-links {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav-links li a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.sidebar-nav-links li a:hover {
+  background-color: #f5f5f5;
+}
+
+.sidebar-nav-links li a.active {
+  background-color: #e25845;
+  color: white;
+}
+
+/* Add these new styles for the sidebar profile header */
+.sidebar-profile-header {
+  padding: 15px 20px;
+  background-color: #f8f9fa; /* A light background to make it stand out */
+  border-bottom: 1px solid #dee2e6;
+}
+
+.sidebar-profile-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.sidebar-profile-link:hover {
+  opacity: 0.8;
+}
+
+.sidebar-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border: 2px solid #e25845; /* A border matching your theme color */
+}
+
+.sidebar-username {
+  font-weight: 600; /* Bold but not too heavy */
+  font-size: 1.1rem;
+  color: #333;
+}
+/* --- DARK MODE for Modals & Sidebars --- */
+
+/* General Modal & Offcanvas Backgrounds */
+body.dark-mode .modal-content,
+body.dark-mode .offcanvas-body,
+body.dark-mode .sidebar-canvas {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+/* === Login Modal === */
+body.dark-mode .login-modal-top h6,
+body.dark-mode .login-modal-top p,
+body.dark-mode .login-modal-top svg,
+body.dark-mode .login-modal-input label,
+body.dark-mode .login-modal-input-in input,
+body.dark-mode .login-modal-input-in span {
+  color: #ffffff;
+}
+
+body.dark-mode .login-modal-apple {
+  border-color: #ffffff;
+}
+body.dark-mode .login-modal-apple p,
+body.dark-mode .login-modal-apple svg {
+  color: #ffffff;
+}
+
+body.dark-mode .login-modal-email,
+body.dark-mode .login-modal-login-btn {
+  border-color: #f87171;
+}
+body.dark-mode .login-modal-email p,
+body.dark-mode .login-modal-email svg,
+body.dark-mode .login-modal-login-btn p,
+body.dark-mode .login-modal-button p {
+  color: #f87171;
+}
+
+body.dark-mode .login-modal-content p {
+  color: #9ca3af;
+}
+
+body.dark-mode .login-modal-input-in {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+body.dark-mode .login-modal-input-in span {
+  border-bottom-color: #ffffff;
+}
+
+
+/* === Location Modal === */
+body.dark-mode .locationget-modal h3,
+body.dark-mode .locationget-modal span {
+  color: #ffffff;
+}
+body.dark-mode .locationget-modal input {
+  background: #374151;
+  color: #ffffff;
+  border: 1px solid #4b5563;
+}
+body.dark-mode .locationget-modal input::placeholder {
+  color: #9ca3af;
+}
+body.dark-mode .location-btn-modal {
+  border-color: #f87171;
+}
+body.dark-mode .location-btn-modal p,
+body.dark-mode .location-btn-modal svg {
+  color: #f87171;
+}
+
+/* === Category Modal === */
+body.dark-mode .category-modal-div {
+  border-color: #4b5563;
+}
+body.dark-mode .category-modal-div p {
+  color: #9ca3af;
+}
+body.dark-mode .category-modal-div:hover {
+  background-color: #374151;
+}
+body.dark-mode .category-modal-div.selected p {
+  color: #ffffff;
+}
+
+/* === Delete Modal === */
+body.dark-mode .delete-modal h6,
+body.dark-mode .delete-modal-final p {
+  color: #ffffff;
+}
+body.dark-mode .delete-modal-btns button:last-child {
+  border-color: #f87171;
+  color: #f87171;
+  background: transparent;
+}
+
+/* === Sidebar Canvas (Old) === */
+body.dark-mode .sidebar-canvas .remaining_content .search_container .search_bar {
+  border-color: #4b5563;
+  background-color: #111827;
+}
+body.dark-mode .sidebar-canvas .remaining_content .search_container .search_bar input {
+  color: #ffffff;
+  border-right-color: #4b5563;
+  background-color: transparent;
+}
+body.dark-mode .sidebar-canvas .remaining_content .search_container .search_bar select {
+  color: #ffffff;
+  background-color: transparent;
+}
+body.dark-mode .sidebar-canvas .remaining_content .social_links ul li a {
+  color: #d1d5db;
+}
+
+/* === New Custom Sidebar === */
+body.dark-mode .custom-sidebar .search_bar_sidebar {
+    border-color: #4b5563;
+}
+body.dark-mode .custom-sidebar .search_bar_sidebar input {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+body.dark-mode .custom-sidebar .search_icon_sidebar {
+  background-color: #374151;
+}
+body.dark-mode .custom-sidebar .sidebar-nav-links li a {
+  color: #d1d5db;
+  border-bottom-color: #374151;
+}
+body.dark-mode .custom-sidebar .sidebar-nav-links li a:hover {
+  background-color: #374151;
+}
+body.dark-mode .sidebar-profile-header {
+  background-color: #111827;
+  border-bottom-color: #374151;
+}
+body.dark-mode .sidebar-username {
+  color: #ffffff;
+}
+
+/* === OTP Inputs === */
+body.dark-mode .otp-input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+body.dark-mode .otp-input:focus {
+  border-color: #3b82f6; /* A common blue for focus */
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* === ENHANCED DARK MODE FIXES === */
+
+/* Bootstrap Offcanvas Dark Mode Override */
+body.dark-mode .offcanvas,
+body.dark-mode .offcanvas-header,
+body.dark-mode .offcanvas-body {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* Offcanvas Header */
+body.dark-mode .offcanvas-header {
+  border-bottom: 1px solid #333333 !important;
+}
+
+body.dark-mode .offcanvas-title {
+  color: #ffffff !important;
+}
+
+/* Close button and header buttons */
+body.dark-mode .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.8;
+}
+
+/* Header toggle/menu buttons */
+body.dark-mode .navbar-toggler,
+body.dark-mode .offcanvas-header button,
+body.dark-mode .offcanvas-header .btn {
+  background-color: #333333 !important;
+  border-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+/* Hamburger menu icon */
+body.dark-mode .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Any white buttons in header */
+body.dark-mode .offcanvas-header .btn-outline-light,
+body.dark-mode .offcanvas-header .btn-light {
+  background-color: #333333 !important;
+  border-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+/* Header icons and SVG elements */
+body.dark-mode .offcanvas-header svg,
+body.dark-mode .offcanvas-header i {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* === Custom Sidebar Specific === */
+body.dark-mode .custom-sidebar .offcanvas {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .custom-sidebar .offcanvas-body {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+/* Search Bar Container */
+body.dark-mode .search_bar_sidebar {
+  border: 1px solid #333333 !important;
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .search_bar_sidebar input {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+body.dark-mode .search_bar_sidebar input::placeholder {
+  color: #888888 !important;
+}
+
+body.dark-mode .search_icon_sidebar {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+/* Form Select Dropdown */
+body.dark-mode .form-select {
+  background-color: #333333 !important;
+  border-color: #333333 !important;
+  color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+body.dark-mode .form-select:focus {
+  background-color: #333333 !important;
+  border-color: #e25845 !important;
+  box-shadow: 0 0 0 0.25rem rgba(226, 88, 69, 0.25) !important;
+  color: #ffffff !important;
+}
+
+/* Border styling */
+body.dark-mode .border-bottom {
+  border-color: #374151 !important;
+}
+
+body.dark-mode .border-top {
+  border-color: #374151 !important;
+}
+
+/* Navigation Links */
+body.dark-mode .sidebar-nav-links {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .sidebar-nav-links li a {
+  color: #ffffff !important;
+  border-bottom: 1px solid #333333 !important;
+  text-decoration: none !important;
+}
+
+body.dark-mode .sidebar-nav-links li a:hover {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .sidebar-nav-links li a.active {
+  background-color: #e25845 !important;
+  color: #ffffff !important;
+}
+
+/* Profile Header */
+body.dark-mode .sidebar-profile-header {
+  background-color: #1e1e1e !important;
+  border-bottom: 1px solid #333333 !important;
+}
+
+body.dark-mode .sidebar-profile-link {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+body.dark-mode .sidebar-username {
+  color: #ffffff !important;
+}
+
+body.dark-mode .sidebar-avatar {
+  border-color: #e25845 !important;
+}
+
+/* Button Styling */
+body.dark-mode .btn {
+  border-color: #333333 !important;
+}
+
+body.dark-mode .btn[style*="background-color: #e25845"] {
+  background-color: #e25845 !important;
+  color: #ffffff !important;
+  border-color: #e25845 !important;
+}
+
+/* Additional Bootstrap overrides */
+body.dark-mode .list-unstyled li {
+  color: #ffffff !important;
+}
+
+/* Flex container fixes */
+body.dark-mode .d-flex.flex-column {
+  background-color: #1e1e1e !important;
+}
+
+/* Padding containers */
+body.dark-mode .p-3 {
+  background-color: inherit !important;
+}
+
+/* Auto margin fix */
+body.dark-mode .mt-auto {
+  background-color: inherit !important;
+}
+
+/* Additional specificity for stubborn elements */
+body.dark-mode .offcanvas .offcanvas-body * {
+  color: inherit !important;
+}
+
+body.dark-mode .offcanvas .offcanvas-body a {
+  color: #ffffff !important;
+}
+
+body.dark-mode .offcanvas .offcanvas-body a:hover {
+  color: #ffffff !important;
+}
+
+body.dark-mode .offcanvas .offcanvas-body a.active {
+  color: #ffffff !important;
+}
+
+body.dark-mode .offcanvas .btn-close::after,
+body.dark-mode .offcanvas .btn-close::before {
+  background: transparent !important;
+}

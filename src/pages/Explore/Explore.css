@@ -1,0 +1,50 @@
+/** @format */
+
+.browse-list-container {
+  padding: 20px;
+  color: #000;
+}
+
+.browse-header {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: Montserrat;
+}
+
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 24px;
+}
+
+.browse-item {
+  font-size: 14px;
+  margin: 0;
+  color: #333;
+  cursor: pointer;
+  font-family: Quicksand;
+}
+
+.browse-item:hover {
+  color: #e25845;
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .browse-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .browse-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .browse-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,153 @@
+/* Backdrop */
+.notification-popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+}
+
+/* Modal */
+.notification-popup-modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 380px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Header */
+.notification-popup-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.notification-popup-modal-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e25845; /* Optional: make title match your color */
+}
+
+.notification-popup-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #e25845; /* Close button matches theme */
+}
+
+/* Description */
+.notification-popup-modal-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  margin-top: 4px;
+}
+
+/* Toggle Option */
+.notification-popup-toggle-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid #eee;
+}
+
+.notification-popup-toggle-label-main {
+  font-size: 16px;
+  color: #333;
+}
+
+.notification-popup-toggle-label-sub {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Toggle Switch */
+.notification-popup-toggle-track {
+  width: 44px;
+  height: 24px;
+  border-radius: 15px;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.notification-popup-toggle-track.active {
+  background-color: #e25845; /* Updated primary color */
+}
+
+.notification-popup-toggle-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.notification-popup-toggle-thumb.active {
+  transform: translateX(20px);
+}
+/* Dark Mode Overrides */
+body.dark-mode .notification-popup-backdrop {
+  background-color: rgba(0, 0, 0, 0.7); /* slightly darker backdrop */
+}
+
+body.dark-mode .notification-popup-modal {
+  background: #1e1e1e; /* dark background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .notification-popup-modal-title {
+  color: #ff8c7e; /* softer accent color for dark mode */
+}
+
+body.dark-mode .notification-popup-close-btn {
+  color: #ff8c7e; /* match title */
+}
+
+body.dark-mode .notification-popup-modal-description {
+  color: #aaa; /* lighter text for readability */
+}
+
+body.dark-mode .notification-popup-toggle-option {
+  border-top: 1px solid #333; /* subtle divider in dark mode */
+}
+
+body.dark-mode .notification-popup-toggle-label-main {
+  color: #fff; /* main text white */
+}
+
+body.dark-mode .notification-popup-toggle-label-sub {
+  color: #bbb; /* secondary text softer */
+}
+
+body.dark-mode .notification-popup-toggle-track {
+  background-color: #555; /* darker track background */
+}
+
+body.dark-mode .notification-popup-toggle-track.active {
+  background-color: #ff8c7e; /* primary accent in dark */
+}
+
+body.dark-mode .notification-popup-toggle-thumb {
+  background-color: #fff; /* thumb stays white for contrast */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}

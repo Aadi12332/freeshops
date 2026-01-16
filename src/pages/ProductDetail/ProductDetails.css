@@ -1,0 +1,456 @@
+/** @format */
+
+/* =========================================
+   1. MAIN LAYOUT & IMAGES
+   ========================================= */
+.product-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  height: 100%;
+  height: auto;
+  padding: 1rem;
+  position: relative;
+}
+
+.product-details-image {
+  max-width: 451px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.product-details-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-details-content {
+  flex: 1;
+  margin-left: 30px;
+  position: relative;
+  min-width: 300px;
+}
+
+/* =========================================
+   2. TYPOGRAPHY & CONTENT
+   ========================================= */
+.product-details-content-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-details-content-top h2 {
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+  color: #161c2d;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.product-details-content-top p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #8492a6;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-details-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 5px;
+}
+
+.product-details-rating svg {
+  color: #f17425;
+  font-size: 18px;
+}
+
+.product-details-specification {
+  margin-top: 1.5rem;
+}
+
+.product-details-specification h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #161c2d;
+  margin: 0 0 10px 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.product-details-points {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.product-details-points p {
+  font-size: 15px;
+  margin: 0;
+  color: #444;
+}
+
+/* =========================================
+   3. ACTION BUTTONS
+   ========================================= */
+
+.product-details-action-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+/* --- Base Style for ALL Buttons --- */
+.product-details-actionbtn button {
+  height: 52px;
+  border-radius: 10px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+/* --- Primary Buttons (Ask, Add to Cart) --- */
+.product-details-actionbtn button:not(.icon-only-btn) {
+  min-width: 130px;
+  padding: 0 24px;
+  background: rgba(248, 92, 112, 0.1);
+  color: #f85c70;
+  border: 1px solid rgba(248, 92, 112, 0.1);
+}
+
+.product-details-actionbtn button:not(.icon-only-btn):hover {
+  background: #f85c70;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(248, 92, 112, 0.3);
+}
+
+/* --- Icon Only Buttons (Heart, Share, Report) --- */
+.product-details-actionbtn button.icon-only-btn {
+  width: 52px;
+  min-width: 52px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  color: #666;
+  font-size: 22px;
+}
+
+.product-details-actionbtn button.icon-only-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* Favorite Specific */
+.product-details-actionbtn button.favorite-button.active {
+  color: #ff0000;
+  background: #fff5f5;
+  border-color: #ffcccc;
+}
+
+/* Report Specific Hover */
+.product-details-actionbtn button.report-button:hover {
+  color: #dc3545;
+  background: #fff5f5;
+  border-color: #ffc9c9;
+}
+
+/* Share Specific Hover */
+.product-details-actionbtn button.share-button:hover {
+  color: #007bff;
+  background: #f0f7ff;
+  border-color: #cce5ff;
+}
+
+/* =========================================
+   4. SHARE POPOVER UI (UPDATED & FIXED)
+   ========================================= */
+
+.position-relative {
+  position: relative;
+}
+
+/* Desktop Popover Container */
+.custom-share-popover {
+  position: absolute;
+  bottom: 75px;      /* Puts it above the button */
+  left: -20px;       /* Shift left to align center with button area */
+  width: 660px;      /* INCREASED WIDTH to fit 4 icons */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  padding: 24px;
+  z-index: 1000;
+  border: 1px solid #f0f0f0;
+  animation: popUpDesktop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header */
+.share-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.share-header span {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+}
+
+.close-share {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ff4d4d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.close-share:hover {
+  background: #fff0f0;
+}
+
+/* Icons Grid */
+.share-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 icons exactly */
+  gap: 20px 10px; /* Adjusted gap */
+  margin-bottom: 24px;
+  justify-items: center;
+}
+
+.share-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+.share-item:hover {
+  transform: translateY(-5px);
+}
+
+.share-item span {
+  font-size: 12px;
+  color: #555;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+/* Copy Link Section */
+.copy-link-section {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 6px;
+  border: 1px solid #eee;
+}
+
+.copy-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  padding: 2px;
+}
+
+.copy-input-container input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 13px;
+  color: #555;
+  outline: none;
+  width: 100%;
+}
+
+/* Copy Button - Styled Red like your image */
+.copy-btn {
+  background: #ffe5e7; /* Light red background */
+  color: #f85c70;       /* Red text */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background: #f85c70;
+  color: white;
+}
+
+.copy-btn.copied {
+  background: #28a745;
+  color: white;
+}
+
+/* =========================================
+   5. MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 768px) {
+  .product-details-container {
+    padding: 0;
+  }
+  
+  .product-details-content {
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  /* Overlay for Mobile Share */
+  .share-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1050;
+    backdrop-filter: blur(2px);
+  }
+
+  /* Bottom Sheet for Mobile Share */
+  .custom-share-popover {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    animation: slideUpMobile 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1051;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+    padding-bottom: 30px;
+    left: 0 !important; /* Force override negative left margin from desktop */
+  }
+}
+
+@keyframes popUpDesktop {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUpMobile {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* =========================================
+   6. DARK MODE
+   ========================================= */
+
+body.dark-mode .product-details-container {
+  background-color: #1e1e1e;
+}
+
+/* Text Colors */
+body.dark-mode .product-details-content-top h2,
+body.dark-mode .product-details-specification h3,
+body.dark-mode .share-header span {
+  color: #fff;
+}
+
+body.dark-mode .product-details-content-top p,
+body.dark-mode .product-details-points p,
+body.dark-mode .share-item span {
+  color: #ccc;
+}
+
+/* Backgrounds */
+body.dark-mode .product-details-points {
+  background: #2a2a2a;
+  border: 1px solid #333;
+}
+
+/* Button Adjustments */
+body.dark-mode .product-details-actionbtn button:not(.icon-only-btn) {
+  background: rgba(248, 92, 112, 0.2);
+  color: #f85c70;
+}
+body.dark-mode .product-details-actionbtn button:not(.icon-only-btn):hover {
+  background: #f85c70;
+  color: white;
+}
+
+/* Icon Buttons Dark Mode */
+body.dark-mode .product-details-actionbtn button.icon-only-btn {
+  background: #2a2a2a;
+  border-color: #333;
+  color: #ddd;
+}
+body.dark-mode .product-details-actionbtn button.favorite-button.active {
+  background: #3d1a1a;
+  color: #ff4d4d;
+  border-color: #552222;
+}
+
+/* Share Popover Dark Mode */
+body.dark-mode .custom-share-popover {
+  background: #222;
+  border-color: #333;
+}
+body.dark-mode .close-share {
+  color: #fff !important;
+}
+body.dark-mode .copy-link-section {
+  background: #333;
+  border-color: #444;
+}
+body.dark-mode .copy-input-container {
+    background: #2a2a2a;
+    border-color: #444;
+}
+body.dark-mode .copy-input-container input {
+  color: #fff;
+}
+/* Copy button dark mode */
+body.dark-mode .copy-btn {
+    background: #3d1a1a;
+    color: #ff8899;
+}
+body.dark-mode .copy-btn:hover {
+    background: #f85c70;
+    color: #fff;
+}

@@ -1,0 +1,525 @@
+/* --- Existing Styles (Base Styles for Desktop First or Mobile First) --- */
+.home-container {
+  /* ... your styles ... */
+}
+
+.chat-container {
+  display: flex; /* Use flexbox for columns */
+  height: calc(100vh - 60px); /* Example: Adjust based on your header/footer */
+  overflow: hidden; /* Prevent container itself from scrolling */
+  background-color: #f8f9fa; /* Light background */
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+/* --- Left Column (Chat List) --- */
+.chat-container-left {
+  flex: 0 0 300px; /* Fixed width on desktop */
+  border-right: 1px solid #dee2e6;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.chat-left-top {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+}
+.chat-left-top p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.chat-left-top svg {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.chat-left-searchbar {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+.chat-left-searchbar svg {
+  margin-right: 10px;
+  color: #6c757d;
+}
+.chat-left-searchbar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  padding: 5px 0;
+}
+
+.chat-left-main {
+  flex-grow: 1; /* Takes remaining space */
+  overflow-y: auto; /* Enable scrolling for chat list */
+}
+
+.chat-left-main-div {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.chat-left-main-div:hover {
+  background-color: #f1f3f5;
+}
+.chat-left-main-div.active-chat {
+  background-color: #e9ecef; /* Highlight selected chat */
+}
+
+.chat-left-main-div-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align time to top */
+  margin-bottom: 5px;
+}
+.chat-left-main-div-image {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allow name to take space */
+  margin-right: 10px; /* Space before time */
+}
+.chat-left-main-div-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+}
+.chat-left-main-div-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.chat-left-main-div-name h6 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px; /* Adjust as needed */
+}
+.chat-left-main-div-name p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+.chat-left-main-div-top span {
+  font-size: 0.75rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.chat-left-main-div-message p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #495057;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px; /* Ensure it doesn't wrap weirdly */
+}
+
+
+/* --- Middle Column (Chat Window) --- */
+.chat-container-middle {
+  flex-grow: 1; /* Takes most space on desktop */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Contained scrolling */
+  background-color: #ffffff; /* WhatsApp-like background */
+  /* Add background image pattern if desired */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAABCAYAAAA/r4NvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAiSURBVDhPY/gPxMCI6AL//w8EDAzA+AsEMDAAwQSK5muFAAAT/wQEV11QRwAAAABJRU5ErkJggg=='); /* Example subtle pattern */
+    background-repeat: repeat;
+}
+
+.chat-container-middle-top {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  background-color: #ededed; /* Header background */
+  border-bottom: 1px solid #d1d7db;
+  min-height: 60px; /* Ensure header has height */
+}
+.chat-back-button { /* Style for the mobile back button */
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Make it easily tappable */
+    margin-right: 15px;
+    cursor: pointer;
+    color: #007bff; /* Or your theme color */
+    padding: 5px;
+    display: none; /* Hidden by default, shown via media query */
+}
+.chat-middle-main-div-image {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Push icons to the right */
+}
+.chat-middle-main-div-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+}
+.chat-middle-main-div-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.chat-middle-main-div-name h6 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.chat-middle-main-div-name p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+.chat-container-middle-right {
+  display: flex;
+  align-items: center;
+}
+.chat-container-middle-right svg {
+  font-size: 1.3rem;
+  margin-left: 20px;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.chat-main-container {
+  flex-grow: 1; /* Takes remaining vertical space */
+  overflow-y: auto; /* Enable message scrolling */
+  padding: 15px 30px; /* Add padding around messages */
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-main-left-message,
+.chat-main-right-message {
+  display: flex;
+  margin-bottom: 15px;
+  max-width: 70%; /* Limit message width */
+  align-items: flex-end; /* Align avatar and text box bottom */
+}
+.chat-main-left-message {
+  align-self: flex-start; /* Align left */
+}
+.chat-main-right-message {
+  align-self: flex-end; /* Align right */
+  flex-direction: row-reverse; /* Avatar on the right */
+}
+
+.chat-main-left-message-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px; /* Space between avatar and message */
+  flex-shrink: 0;
+}
+.chat-main-right-message .chat-main-left-message-img { /* Adjust margin for right side */
+  margin-right: 0;
+  margin-left: 10px;
+}
+.chat-main-left-message-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chat-main-left-message-text,
+.chat-main-right-message-text {
+  display: flex;
+  flex-direction: column; /* Stack message bubble and timestamp */
+}
+.chat-main-left-message-text {
+    align-items: flex-start;
+}
+.chat-main-right-message-text {
+    align-items: flex-end;
+}
+
+.chat-main-left-message-div,
+.chat-main-right-message-div {
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 3px; /* Space between bubble and time */
+  word-wrap: break-word; /* Break long words */
+}
+.chat-main-left-message-div {
+  background-color: #ffffff; /* Partner message background */
+  border-top-left-radius: 0; /* Pointy corner */
+}
+.chat-main-right-message-div {
+  background-color: #dcf8c6; /* User message background (WhatsApp green) */
+  border-top-right-radius: 0; /* Pointy corner */
+}
+.chat-main-left-message-div p,
+.chat-main-right-message-div p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.chat-main-left-message-text span,
+.chat-main-right-message-text span {
+  font-size: 0.7rem;
+  color: #6c757d;
+  margin-top: 2px;
+}
+.chat-main-right-message-text span {
+  align-self: flex-end;
+}
+
+.chat-main-input {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #f0f0f0; /* Input area background */
+  border-top: 1px solid #d1d7db;
+  position: relative; /* Needed for absolute positioned emoji picker */
+}
+.chat-main-input input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin: 0 10px;
+  background-color: #ffffff;
+}
+.chat-main-input-icons {
+  display: flex;
+  align-items: center;
+}
+.chat-main-input-icons svg {
+  font-size: 1.4rem;
+  color: #6c757d;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.chat-main-input-icon-send {
+  background-color: #007bff; /* Send button color */
+  color: #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.chat-main-input-icon-send:hover {
+  background-color: #0056b3;
+}
+.chat-main-input-icon-send svg {
+    color: #ffffff; /* Ensure icon inside is white */
+    margin-left: 0; /* Override default margin */
+}
+.emoji-picker-container {
+    position: absolute;
+    bottom: 60px; /* Position above the input bar */
+    right: 15px;  /* Align to the right */
+    z-index: 1000;
+    width: 300px; /* Fixed width for picker */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure picker respects border radius */
+}
+
+/* --- Right Column (User Details) --- */
+.chat-container-right {
+  flex: 0 0 280px; /* Fixed width on desktop */
+  border-left: 1px solid #dee2e6;
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex; /* Default state */
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-right-top {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.chat-right-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px auto;
+  border: 3px solid #e9ecef;
+}
+.chat-right-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.chat-right-name h6 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.chat-right-name p {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+.chat-right-name span {
+  font-size: 0.9rem;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-right-name span svg {
+  margin-right: 5px;
+  color: #ffc107; /* Star color */
+}
+.chat-right-detail {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #495057;
+    word-wrap: break-word;
+}
+
+/* Placeholder styles */
+.chat-container-middle-placeholder,
+.chat-right-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #6c757d;
+    text-align: center;
+    flex-grow: 1; /* Take space */
+}
+.chat-container-middle-placeholder {
+    background-color: #f8f9fa; /* Match background */
+}
+.chat-right-placeholder {
+    /* Usually just hidden */
+}
+
+
+/* --- Mobile Responsiveness (Example: max-width 768px) --- */
+@media (max-width: 768px) {
+  .chat-container {
+    height: 100vh; /* Take full viewport height */
+    border: none;
+    border-radius: 0;
+  }
+
+  /* Hide right details pane completely on mobile */
+  .chat-container-right {
+    display: none;
+  }
+
+  /* By default, show only the list view */
+  .chat-container-left {
+    flex: 1 1 100%; /* Take full width */
+    border-right: none;
+    display: flex; /* Ensure it's visible by default */
+  }
+  .chat-container-middle {
+    display: none; /* Hide middle chat view by default */
+  }
+
+  /* When a chat is selected (mobile-chat-active class is on parent) */
+  .mobile-chat-active .chat-container-left {
+    display: none; /* Hide list */
+  }
+  .mobile-chat-active .chat-container-middle {
+    flex: 1 1 100%; /* Take full width */
+    display: flex; /* Show chat view */
+  }
+  .mobile-chat-active .chat-back-button {
+    display: inline-block; /* Show the back button */
+  }
+
+  /* Adjust padding/margins for smaller screens */
+  .chat-main-container {
+    padding: 10px 15px; /* Reduce padding in message area */
+  }
+  .chat-main-left-message,
+  .chat-main-right-message {
+    max-width: 85%; /* Allow messages to be a bit wider */
+  }
+
+  .chat-main-input {
+    padding: 8px 10px;
+  }
+  .chat-main-input input {
+    padding: 8px 12px;
+  }
+    .chat-main-input-icons svg {
+    font-size: 1.3rem;
+    margin-left: 8px;
+    }
+    .chat-main-input-icon-send {
+    width: 38px;
+    height: 38px;
+    margin-left: 8px;
+    }
+
+    .emoji-picker-container {
+        right: 10px; /* Adjust position */
+        bottom: 55px; /* Adjust position */
+        width: calc(100vw - 20px); /* Make picker mostly full width */
+        max-width: 320px; /* But limit max width */
+    }
+    /* Optional: Adjust chat list item display if needed */
+    .chat-left-main-div-name h6 {
+        max-width: 120px;
+    }
+    .chat-left-main-div-message p {
+        max-width: 200px;
+    }
+}
+
+/* Smaller Mobile Screens */
+@media (max-width: 480px) {
+    .chat-main-left-message,
+    .chat-main-right-message {
+        max-width: 90%;
+    }
+    .chat-main-container {
+        padding: 10px;
+    }
+    .chat-left-main-div-name h6 {
+        font-size: 0.9rem;
+    }
+    .chat-left-main-div-message p {
+        font-size: 0.8rem;
+    }
+    .chat-middle-main-div-name h6 {
+        font-size: 0.95rem;
+    }
+    .chat-middle-main-div-img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    .chat-main-left-message-img {
+        width: 30px;
+        height: 30px;
+    }
+}

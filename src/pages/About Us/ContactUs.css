@@ -1,0 +1,200 @@
+/* ========== General Reset ========== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* ========== Header Banner ========== */
+.contact-header-banner {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #e25845, #f39c12);
+  color: #fff;
+  overflow: hidden;
+}
+
+.contact-header-banner h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+  font-weight: 600;
+}
+
+.banner-bg-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+}
+
+.layer-1 {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  transform: rotate(-15deg) translate(-20%, -20%);}
+.layer-2 {
+  background: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  transform: rotate(10deg) translate(-10%, 10%);
+  opacity: 0.15;}
+.layer-3 {
+  background: linear-gradient(
+    20deg,
+    rgba(200, 100, 150, 0.2),
+    rgba(200, 100, 150, 0)
+  );
+  transform: rotate(-5deg) translate(5%, 5%);
+  opacity: 0.08;}
+
+/* ========== Contact Container ========== */
+.contact-container {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* ========== Left Side (Contact Info) ========== */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #e25845;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #34495e;
+  gap: 10px;
+}
+
+.contact-info li svg {
+  color: #e25845;
+}
+
+/* ========== Right Side (Form) ========== */
+.contact-form-wrapper {
+  flex: 2;
+  min-width: 350px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #e25845;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  width: 100%;
+  background: #e25845;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #c44532;
+}
+
+/* ========== Status Messages ========== */
+.status-message {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.status-message.success {
+  background: #eafaf1;
+  color: #27ae60;
+  border: 1px solid #27ae60;
+}
+
+.status-message.error {
+  background: #fdecea;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form-wrapper {
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,108 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+.main_container {
+  margin-bottom: 1.5rem;
+}
+
+.label_container {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.label_container h6 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #161c2d;
+  margin: 0;
+  font-family: Montserrat;
+}
+
+.label_container svg {
+  font-size: 15px;
+  color: #161c2d;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.input_container label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color: #161c2d;
+  margin: 0;
+  font-family: Quicksand;
+}
+
+.input_container select {
+  width: auto;
+  height: 38px;
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  outline: none;
+  font-size: 14px;
+  line-height: 26px;
+  color: #212529;
+  margin: 0;
+  font-family: Quicksand;
+  font-weight: 600;
+}
+
+.input_container input {
+  width: auto;
+  height: auto;
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  outline: none;
+  font-size: 14px;
+  line-height: 26px;
+  color: #212529;
+  margin: 0;
+  font-family: Quicksand;
+  font-weight: 600;
+}
+
+.upload_img_container p {
+  font-weight: 600;
+  font-family: Quicksand;
+  font-size: 14px;
+  line-height: 21px;
+  color: #161c2d;
+  margin: 0;
+  margin-top: 0.2rem;
+}
+
+.upload_img_container span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #161c2d;
+  margin: 0;
+  font-family: Quicksand;
+}
+
+.select_image {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}

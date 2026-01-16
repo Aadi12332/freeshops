@@ -1,0 +1,525 @@
+/* CartPage.css */
+.cart-page {
+  background-color: #f8f8f8;
+  min-height: 60vh;
+  padding: 20px;
+}
+
+.cart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cart-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cart-content {
+  display: flex;
+  gap: 20px;
+}
+
+.cart-items {
+  flex: 1;
+}
+
+.cart-item {
+  display: flex;
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-item-info {
+  margin-left: 15px;
+  flex: 1;
+}
+
+.cart-item-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.location {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-btn {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quantity-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: none;
+  color: #ff4444;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.remove-btn:hover {
+  text-decoration: underline;
+}
+
+.cart-summary {
+  width: 300px;
+}
+
+.summary-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.summary-box h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkout-btn:hover {
+  background-color: #ff3333;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 40px;
+}
+
+.continue-shopping {
+  display: inline-block;
+  background-color: #ff4444;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.continue-shopping:hover {
+  background-color: #ff3333;
+}
+
+/* Responsive Design for Cart Page */
+@media (max-width: 768px) {
+  .cart-content {
+    flex-direction: column;
+  }
+
+  .cart-summary {
+    width: 100%;
+  }
+
+  .cart-item {
+    flex-direction: column;
+  }
+
+  .cart-item-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+  }
+
+  .cart-item-info {
+    margin-left: 0;
+  }
+
+  .quantity-controls {
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-container {
+    padding: 10px; /* Adjusted from original to be consistent */
+  }
+
+  .cart-item {
+    padding: 10px;
+  }
+
+  .cart-item-image {
+    height: 150px;
+  }
+}
+
+/* Payment Modal Styles */
+.payment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem; /* Default padding for overlay */
+}
+
+.payment-modal-container {
+  background-color: white;
+  width: 100%;
+  max-width: 28rem; /* 448px */
+  border-radius: 0.75rem; /* 12px */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden; /* Ensures content respects border-radius */
+  display: flex; /* Added for easier centering if content is smaller */
+  flex-direction: column; /* Stack header, content, footer vertically */
+}
+
+.payment-modal-header {
+  background-color: #f3f4f6; /* Light gray */
+  padding: 1.5rem; /* 24px */
+  border-bottom: 1px solid #e5e7eb; /* Lighter gray border */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-modal-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600; /* Semibold */
+  color: #1f2937; /* Dark gray */
+}
+
+.payment-modal-close-button {
+  color: #6b7280; /* Medium gray */
+  transition: color 0.2s;
+  background: none; /* Ensure it's just an icon/text */
+  border: none; /* Ensure it's just an icon/text */
+  font-size: 1.5rem; /* Make close button larger for touch */
+  cursor: pointer;
+}
+
+.payment-modal-close-button:hover {
+  color: #374151; /* Darker gray on hover */
+}
+
+.payment-modal-content {
+  padding: 1.5rem; /* 24px */
+  flex-grow: 1; /* Allows content to take available space */
+  overflow-y: auto; /* Add scroll if content is too long */
+}
+
+.payment-total-container {
+  background-color: #ebf8ff; /* Light blue */
+  padding: 1rem; /* 16px */
+  border-radius: 0.5rem; /* 8px */
+  margin-bottom: 1.5rem; /* 24px */
+}
+
+.payment-total-label {
+  font-size: 0.875rem; /* 14px */
+  color: #4a5568; /* Medium gray */
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+.payment-total-amount {
+  font-size: 1.875rem; /* 30px */
+  font-weight: bold;
+  color: #2c5282; /* Dark blue */
+}
+
+.payment-form-label {
+  display: block;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500; /* Medium */
+  color: #4a5568; /* Medium gray */
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.payment-card-input {
+  width: 100%;
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 0.375rem; /* 6px */
+  padding: 0.75rem; /* 12px */
+  transition: all 0.3s;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.payment-card-input:focus {
+  outline: none;
+  border-color: #3b82f6; /* Blue focus */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Blue shadow focus */
+}
+
+.payment-error-message {
+  background-color: #fff5f5; /* Light red */
+  border: 1px solid #fecaca; /* Red border */
+  color: #7b341e; /* Dark red text */
+  padding: 1rem; /* 16px */
+  border-radius: 0.5rem; /* 8px */
+  margin-top: 1rem; /* 16px */
+  font-size: 0.875rem; /* 14px */
+}
+
+.payment-submit-button {
+  width: 100%;
+  padding: 0.75rem; /* 12px */
+  border-radius: 0.5rem; /* 8px */
+  font-weight: 600; /* Semibold */
+  color: white;
+  background-color: #2563eb; /* Blue */
+  transition: background-color 0.3s;
+  border: none; /* Remove default border */
+  cursor: pointer;
+  font-size: 1rem; /* 16px */
+}
+
+.payment-submit-button:hover {
+  background-color: #1d4ed8; /* Darker blue on hover */
+}
+
+.payment-submit-button:disabled {
+  background-color: #9ca3af; /* Gray when disabled */
+  cursor: not-allowed;
+}
+
+/* Responsive Design for Payment Modal */
+@media (max-width: 768px) {
+  .payment-modal-container {
+    /* max-width remains 28rem, but padding on overlay ensures it doesn't touch edges */
+    /* If you want it wider on tablets but not full screen: */
+    /* max-width: 90%; */
+    /* Or for a slightly larger fixed width: */
+    /* max-width: 32rem; */ /* e.g., 512px */
+  }
+
+  .payment-modal-title {
+    font-size: 1.25rem; /* 20px - Slightly smaller title for tablets */
+  }
+
+  .payment-total-amount {
+    font-size: 1.75rem; /* 28px - Slightly smaller total for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-modal-overlay {
+    padding: 0.5rem; /* Reduce padding on very small screens */
+    align-items: flex-end; /* Align modal to bottom for better usability on mobile */
+  }
+
+  .payment-modal-container {
+    max-width: 100%; /* Allow modal to take full width */
+    height: auto; /* Adjust height based on content */
+    max-height: 90vh; /* Prevent modal from taking full screen height, allow some background visibility */
+    margin: 0; /* Remove any specific margins if set */
+    border-radius: 0.75rem 0.75rem 0 0; /* Round top corners only if aligned to bottom */
+    /* If not aligning to bottom, you might want: border-radius: 0.5rem; */
+  }
+
+  .payment-modal-header {
+    padding: 1rem; /* 16px - Reduce padding in header */
+  }
+
+  .payment-modal-title {
+    font-size: 1.125rem; /* 18px - Further reduce title font size */
+  }
+
+  .payment-modal-close-button {
+    font-size: 1.25rem; /* Adjust close button size */
+  }
+
+  .payment-modal-content {
+    padding: 1rem; /* 16px - Reduce padding in content area */
+  }
+
+  .payment-total-container {
+    padding: 0.75rem; /* 12px */
+    margin-bottom: 1rem; /* 16px */
+  }
+
+  .payment-total-amount {
+    font-size: 1.5rem; /* 24px - Reduce total amount font size */
+  }
+
+  .payment-form-label {
+    font-size: 0.875rem; /* 14px - Keep label size, or slightly reduce if needed */
+  }
+
+  .payment-card-input {
+    padding: 0.625rem; /* 10px - Slightly smaller padding for input */
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .payment-submit-button {
+    padding: 0.625rem; /* 10px */
+    font-size: 0.9375rem; /* 15px */
+  }
+
+  .payment-error-message {
+    padding: 0.75rem; /* 12px */
+    font-size: 0.8125rem; /* 13px */
+  }
+}
+
+/* 🌙 DARK MODE PATCH FOR CART & PAYMENT MODAL */
+body.dark-mode .cart-page {
+  background-color: #121212;
+}
+
+body.dark-mode .cart-container h1,
+body.dark-mode .cart-item-info h3,
+body.dark-mode .price,
+body.dark-mode .summary-box h2,
+body.dark-mode .summary-total,
+body.dark-mode .empty-cart {
+  color: #ffffff;
+}
+
+body.dark-mode .location,
+body.dark-mode .summary-row {
+  color: #aaaaaa;
+}
+
+body.dark-mode .cart-item,
+body.dark-mode .summary-box {
+  background-color: #1e1e1e;
+  box-shadow: none;
+  border: 1px solid #333;
+}
+
+body.dark-mode .quantity-btn {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+body.dark-mode .quantity-btn:hover {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .summary-total {
+  border-top: 1px solid #333;
+}
+
+/* Payment Modal Dark Mode */
+body.dark-mode .payment-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .payment-modal-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .payment-modal-header {
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .payment-modal-title {
+  color: #ffffff;
+}
+
+body.dark-mode .payment-modal-close-button {
+  color: #aaaaaa;
+}
+
+body.dark-mode .payment-modal-close-button:hover {
+  color: #ffffff;
+}
+
+body.dark-mode .payment-total-container {
+  background-color: rgba(59, 130, 246, 0.1); /* Dark mode equivalent of light blue */
+}
+
+body.dark-mode .payment-total-label {
+  color: #a0aec0; /* Light blue-gray */
+}
+
+body.dark-mode .payment-total-amount {
+  color: #90cdf4; /* Light blue */
+}
+
+body.dark-mode .payment-form-label {
+  color: #aaaaaa;
+}
+
+body.dark-mode .payment-card-input {
+  background-color: #2b2b2b;
+  border-color: #555;
+  color: #ffffff;
+}
+
+body.dark-mode .payment-card-input::placeholder {
+  color: #888;
+}
+
+body.dark-mode .payment-card-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Focus shadow is okay for dark mode */
+}
+
+body.dark-mode .payment-error-message {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+}
+
+body.dark-mode .payment-submit-button:disabled {
+  background-color: #4a5568;
+}
