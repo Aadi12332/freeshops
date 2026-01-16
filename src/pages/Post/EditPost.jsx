@@ -9,7 +9,7 @@ import { uploadFileToFirebase } from "./uploadFileToFirebase";
 import { FiImage, FiUser } from "react-icons/fi";
 import { GoTag } from "react-icons/go";
 import { IoIosInformationCircleOutline } from "react-icons/io";
-import "./post.css"; // Using regular CSS instead of module
+import "./Post.css";
 import { Form } from "react-bootstrap";
 import Swal from "sweetalert2";
 import {
