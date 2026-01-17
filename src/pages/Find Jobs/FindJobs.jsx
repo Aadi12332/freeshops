@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getApi } from "../../Repository/Api";
 import endPoints from "../../Repository/apiConfig";
 import { BiLoaderCircle } from "react-icons/bi";
+import JobDetails from "./JobDetails";
 
 const FindJobs = () => {
   const location = useLocation();
@@ -13,13 +14,12 @@ const FindJobs = () => {
   const searchParams = new URLSearchParams(location.search);
   const serviceCategoryId = searchParams.get("category");
   const searchQueryParam = searchParams.get("search");
-
+  const [selectedJobId, setSelectedJobId] = useState(null);
   const [search, setSearch] = useState(searchQueryParam || "");
   const [response, setResponse] = useState(null);
   const [allCategories, setAllCategories] = useState(null);
   const [isLoadingJobs, setIsLoadingJobs] = useState(true);
   const [isLoadingCategories, setIsLoadingCategories] = useState(true);
-
   const fetchCategories = () => {
     setIsLoadingCategories(true);
     getApi(endPoints.getServiceCategory, {
@@ -30,16 +30,14 @@ const FindJobs = () => {
     });
   };
 
-
-
   // URL params parse karne ke liye useEffect
-useEffect(() => {
-  const params = new URLSearchParams(location.search);
-  const newSearch = params.get("search") || "";
-  const newCategory = params.get("category") || null;
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const newSearch = params.get("search") || "";
+    const newCategory = params.get("category") || null;
 
-  setSearch(newSearch); // search state ko URL ke saath sync karo
-}, [location.search]);
+    setSearch(newSearch); // search state ko URL ke saath sync karo
+  }, [location.search]);
 
   useEffect(() => {
     fetchCategories();
@@ -75,6 +73,7 @@ useEffect(() => {
       setResponse: (data) => {
         setResponse(data);
         setIsLoadingJobs(false);
+        setSelectedJobId(null);
       },
     });
   }, [serviceCategoryId, search]);
@@ -91,10 +90,13 @@ useEffect(() => {
             <div className="blog-top-left-top">
               <span>HOW IT WORKS</span>
             </div>
-            <h1 className="d-none d-lg-block d-md-block">See Jobs Available for You</h1>
+            <h1 className="d-none d-lg-block d-md-block">
+              See Jobs Available for You
+            </h1>
             <p className="d-block d-lg-none">See Jobs Available for You</p>
             <p>
-              Freeshoppsps is the simplest, most trusted way to find jobs locally
+              Freeshoppsps is the simplest, most trusted way to find jobs
+              locally
             </p>
           </div>
           <div className="blog-top-right">
@@ -138,36 +140,35 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Categories */}
           <div className="productlist-subcategory">
             {isLoadingCategories ? (
-               <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "40vh", // full viewport height
-    }}
-  >
-    <div
-      style={{
-        width: "50px",
-        height: "50px",
-        border: "6px solid #f3f3f3",
-        borderTop: "6px solid #3498db",
-        borderRadius: "50%",
-        animation: "spin 1s linear infinite",
-      }}
-    />
-    <style>
-      {`
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `}
-    </style>
-  </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "40vh", // full viewport height
+                }}
+              >
+                <div
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    border: "6px solid #f3f3f3",
+                    borderTop: "6px solid #3498db",
+                    borderRadius: "50%",
+                    animation: "spin 1s linear infinite",
+                  }}
+                />
+                <style>
+                  {`
+                    @keyframes spin {
+                      0% { transform: rotate(0deg); }
+                      100% { transform: rotate(360deg); }
+                    }
+                  `}
+                </style>
+              </div>
             ) : (
               allCategories?.data?.map((item) => {
                 const params = new URLSearchParams();
@@ -195,70 +196,78 @@ useEffect(() => {
             )}
           </div>
 
-          {/* Jobs */}
-          <div className="findjob-jobs">
-            <div className="findjob-jobs-div">
-              {isLoadingJobs ? (
+          <div className="flex items-start gap-3 mt-5">
+            <div className="findjob-jobs flex-1 !mt-0">
+              <div className="findjob-jobs-div !mt-0">
+                {isLoadingJobs ? (
                   <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "40vh", // full viewport height
-    }}
-  >
-    <div
-      style={{
-        width: "50px",
-        height: "50px",
-        border: "6px solid #f3f3f3",
-        borderTop: "6px solid #3498db",
-        borderRadius: "50%",
-        animation: "spin 1s linear infinite",
-      }}
-    />
-    <style>
-      {`
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `}
-    </style>
-  </div>
-              ) : !response ||
-                !response.data ||
-                !response.data.docs ||
-                response.data.docs.length === 0 ? (
-                <div className="no-jobs-found">
-                  <p>No jobs found. Try adjusting your search criteria.</p>
-                </div>
-              ) : (
-                response?.data?.docs?.map((item) => (
-                  <Link
-                    to={`/jobs/${item?._id}`}
-                    key={item?._id}
-                    className="link"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "40vh", // full viewport height
+                    }}
                   >
-                    <div className="findjob-job">
-                      <div className="findjob-job-image">
-                        <img src={item?.image} alt="" />
-                      </div>
-                      <div className="findjob-job-right">
-                        <div className="findjob-job-right-btn">
-                          <h6>{item?.typeOfJob}</h6>
+                    <div
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        border: "6px solid #f3f3f3",
+                        borderTop: "6px solid #3498db",
+                        borderRadius: "50%",
+                        animation: "spin 1s linear infinite",
+                      }}
+                    />
+                    <style>
+                      {`
+                        @keyframes spin {
+                          0% { transform: rotate(0deg); }
+                          100% { transform: rotate(360deg); }
+                        }
+                      `}
+                    </style>
+                  </div>
+                ) : !response ||
+                  !response.data ||
+                  !response.data.docs ||
+                  response.data.docs.length === 0 ? (
+                  <div className="no-jobs-found">
+                    <p>No jobs found. Try adjusting your search criteria.</p>
+                  </div>
+                ) : (
+                  response?.data?.docs?.map((item) => (
+                    <Link
+                      to={`/jobs/${item?._id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setSelectedJobId(item?._id);
+                      }}
+                      key={item?._id}
+                      className="link hover:!no-underline"
+                    >
+                      <div className="findjob-job">
+                        <div className={`findjob-job-image ${!selectedJobId ? "" : "!w-[100px] !h-[100px] object-contain"}`}>
+                          <img src={item?.image} alt="" />
                         </div>
-                        <h4>{item?.title}</h4>
-                        <p>${item?.salary}</p>
-                        <h5>{item?.storage}</h5>
-                        <h5>
-                          {item?.createdAt?.slice(0, 10)}, {item?.location}
-                        </h5>
+                        <div className="findjob-job-right !py-0">
+                          <h4 className="capitalize !mt-0">{item?.title}</h4>
+                          <p className="!text-[16px] !mt-0">${item?.salary}</p>
+                          <h5 className="!text-[16px] !mt-0">{item?.storage}</h5>
+                          <h5 className="!text-[16px] !mt-0">
+                            {item?.createdAt?.slice(0, 10)}, {item?.location}
+                          </h5>
+                          <div className="findjob-job-right-btn !mt-3">
+                            <h6>{item?.typeOfJob}</h6>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                ))
-              )}
+                    </Link>
+                  ))
+                )}
+              </div>
+            </div>
+            <div className={`flex-1 ${!selectedJobId ? "hidden" : ""}`}>
+              <JobDetails jobId={selectedJobId} />
             </div>
           </div>
         </div>

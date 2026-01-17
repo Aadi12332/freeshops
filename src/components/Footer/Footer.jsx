@@ -195,7 +195,7 @@ const Footer = () => {
       />
       <ForgotPassword show={openForgot} onHide={() => setForgot(false)} />
 
-      <div className="city-search">
+      <div className="city-search container">
         <h2>Search for items by city</h2>
 
         <div className="city-grid">
@@ -303,6 +303,7 @@ const Footer = () => {
       </div>
 
       <footer className="site-footer__container">
+        <div className="container mx-auto">
         <div className="site-footer__main-content">
           <div className="navbar-logo bg-white rounded-full mb-3">
             <Link to="/">
@@ -394,6 +395,7 @@ const Footer = () => {
           <div className="site-footer__bottom-section">
             <p>© 2024 Freeshoppsps</p>
           </div>
+        </div>
         </div>
       </footer>
     </>

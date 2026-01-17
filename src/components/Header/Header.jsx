@@ -48,7 +48,7 @@ const Header = () => {
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
   const [isLoadingSubCategories, setIsLoadingSubCategories] = useState(false);
   const hoverTimeout = useRef(null);
-  const [searchType, setSearchType] = useState("sale");
+  const [searchType, setSearchType] = useState("home");
 
   const [profile, setProfile] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -258,7 +258,7 @@ const Header = () => {
                   value={searchType}
                   onChange={(e) => setSearchType(e.target.value)}
                 >
-                  <option value="sale">Home</option>
+                  <option value="home">Home</option>
                   <option value="sale">Product</option>
                   <option value="jobs">Service</option>
                 </select>
@@ -268,7 +268,7 @@ const Header = () => {
               </div>
               <div className="navbar-location d-flex align-items-center" onClick={handleNearbyClick} style={{ cursor: "pointer" }}>
                 <IoLocationSharp className="me-1" />
-                <span className="truncate max-w-[120px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[410px] inline-block align-middle">
+                <span className="truncate max-w-[120px] xl:max-w-[250px] inline-block align-middle">
                   {locationCurrent || 'Nearby + Shipping'}
                 </span>
                 <FaTruck className="ms-2" />
@@ -280,8 +280,8 @@ const Header = () => {
             {isLoggedIn ? (
               // LOGGED-IN VIEW
               <>
-                <div className="logged-in-nav">
-                  <Link to="/saved-products" className="logged-in-nav-item">
+                <div className="logged-in-nav items-center">
+                  <Link to="/saved-products" className="logged-in-nav-item gap-2">
                     <FaRegHeart className="text-[#e25845]" size={22} />
                     <span>Saved</span>
                   </Link>

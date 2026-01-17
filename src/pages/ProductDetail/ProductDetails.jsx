@@ -1,36 +1,45 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FaClock } from "react-icons/fa6";
+import { FaClock, FaMessage, FaRegMessage, FaSignalMessenger } from "react-icons/fa6";
 
 // 1. Social Share Buttons
 import {
-  FacebookShareButton, FacebookIcon,
-  WhatsappShareButton, WhatsappIcon,
-  TwitterShareButton, TwitterIcon,
-  TelegramShareButton, TelegramIcon,
-  LinkedinShareButton, LinkedinIcon,
-  RedditShareButton, RedditIcon,
-  PinterestShareButton, PinterestIcon,
-  EmailShareButton, EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  RedditShareButton,
+  RedditIcon,
+  PinterestShareButton,
+  PinterestIcon,
+  EmailShareButton,
+  EmailIcon,
+  FacebookMessengerIcon,
 } from "react-share";
 
 // 2. UI Icons (Io5)
-import { 
-  IoShareSocialOutline, 
-  IoFlagOutline, 
-  IoHeart, 
-  IoHeartOutline, 
-  IoClose, 
-  IoStarOutline, 
-  IoStar, 
+import {
+  IoShareSocialOutline,
+  IoFlagOutline,
+  IoHeart,
+  IoHeartOutline,
+  IoClose,
+  IoStarOutline,
+  IoStar,
   IoStarHalf,
-  IoLocationSharp, 
+  IoLocationSharp,
   IoCopyOutline,
-  IoCheckmarkCircleOutline 
+  IoCheckmarkCircleOutline,
 } from "react-icons/io5";
 
-import { BiErrorCircle } from "react-icons/bi"; 
+import { BiErrorCircle } from "react-icons/bi";
 import QRcode from "../../components/CommonComponent/QRcode";
 import { getApi, postApi } from "../../Repository/Api";
 import endPoints from "../../Repository/apiConfig";
@@ -94,14 +103,59 @@ function getStars(rating, maxStars = 5) {
 const LoadingState = () => (
   <div className="product-details-container">
     <div className="product-details-image" style={{ position: "relative" }}>
-      <div className="loading-placeholder" style={{ width: "100%", height: "100%", background: "#f2f2f2", animation: "pulse 1.5s infinite ease-in-out" }} />
-      <div className="loading-spinner" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "50px", height: "50px", border: "5px solid #f3f3f3", borderTop: "5px solid #f85c70", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
+      <div
+        className="loading-placeholder"
+        style={{
+          width: "100%",
+          height: "100%",
+          background: "#f2f2f2",
+          animation: "pulse 1.5s infinite ease-in-out",
+        }}
+      />
+      <div
+        className="loading-spinner"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "50px",
+          height: "50px",
+          border: "5px solid #f3f3f3",
+          borderTop: "5px solid #f85c70",
+          borderRadius: "50%",
+          animation: "spin 1s linear infinite",
+        }}
+      />
     </div>
     <div className="product-details-content">
-       {/* Skeleton UI elements... */}
-       <div style={{ height: "24px", width: "60%", background: "#f2f2f2", marginBottom: "8px", animation: "pulse 1.5s infinite" }} />
-       <div style={{ height: "18px", width: "40%", background: "#f2f2f2", marginBottom: "20px", animation: "pulse 1.5s infinite" }} />
-       <div style={{ height: "200px", width: "100%", background: "#f2f2f2", animation: "pulse 1.5s infinite" }} />
+      {/* Skeleton UI elements... */}
+      <div
+        style={{
+          height: "24px",
+          width: "60%",
+          background: "#f2f2f2",
+          marginBottom: "8px",
+          animation: "pulse 1.5s infinite",
+        }}
+      />
+      <div
+        style={{
+          height: "18px",
+          width: "40%",
+          background: "#f2f2f2",
+          marginBottom: "20px",
+          animation: "pulse 1.5s infinite",
+        }}
+      />
+      <div
+        style={{
+          height: "200px",
+          width: "100%",
+          background: "#f2f2f2",
+          animation: "pulse 1.5s infinite",
+        }}
+      />
     </div>
     <style>{`@keyframes spin { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } } @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }`}</style>
   </div>
@@ -109,11 +163,15 @@ const LoadingState = () => (
 
 const ErrorState = ({ message, onRetry }) => (
   <div className="product-details-container error-container">
-    <div className="error-content text-center py-5" style={{width: '100%'}}>
+    <div className="error-content text-center py-5" style={{ width: "100%" }}>
       <BiErrorCircle size={64} className="text-danger mb-3" />
       <h3>Oops! Something went wrong</h3>
       <p>{message || "We couldn't load this product's details."}</p>
-      {onRetry && <button className="btn btn-primary mt-3" onClick={onRetry}>Try Again</button>}
+      {onRetry && (
+        <button className="btn btn-primary mt-3" onClick={onRetry}>
+          Try Again
+        </button>
+      )}
     </div>
   </div>
 );
@@ -126,14 +184,14 @@ const ProductDetails = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const id = searchParams.get("id");
-  
+
   // Data States
   const [response, setResponse] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [error, setError] = useState(null);
   const [addToCartError, setAddToCartError] = useState(null);
-  
+
   // UI States
   const isLoggedIn = useSelector(isAuthenticated);
   const [showFirstModal, setShowFirstModal] = useState(false);
@@ -141,7 +199,7 @@ const ProductDetails = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [showListModal, setShowListModal] = useState(false);
-  
+
   // Share States
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -204,38 +262,37 @@ const ProductDetails = () => {
 
   // --- 3. Cart Logic ---
   const handleAddToCart = async () => {
-  if (!isLoggedIn) {
-    setShowFirstModal(true);
-    return;
-  }
+    if (!isLoggedIn) {
+      setShowFirstModal(true);
+      return;
+    }
 
-  try {
-    setIsAddingToCart(true);
-    setAddToCartError(null);
+    try {
+      setIsAddingToCart(true);
+      setAddToCartError(null);
 
-    await postApi(
-      endPoints.cart.addToCart(id),
-      { quantity: 1 },
-      {
-        setResponse: (data) => {
-          if (data) navigate("/cart");
-          else throw new Error("Failed to add to cart");
+      await postApi(
+        endPoints.cart.addToCart(id),
+        { quantity: 1 },
+        {
+          setResponse: (data) => {
+            if (data) navigate("/cart");
+            else throw new Error("Failed to add to cart");
+          },
+          onError: (err) => {
+            throw err; // <-- correctly wrapped inside function
+          },
         },
-        onError: (err) => {
-          throw err; // <-- correctly wrapped inside function
-        }
-      }
-    );
-
-  } catch (error) {
-    setAddToCartError(error?.message || "Failed to add to cart.");
-  } finally {
-    setIsAddingToCart(false);
-  }
-};
+      );
+    } catch (error) {
+      setAddToCartError(error?.message || "Failed to add to cart.");
+    } finally {
+      setIsAddingToCart(false);
+    }
+  };
 
   // --- 4. Share Logic ---
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
   const shareTitle = response?.data?.name || "Check out this amazing product!";
 
   const handleShareTrigger = async () => {
@@ -248,7 +305,7 @@ const ProductDetails = () => {
           url: shareUrl,
         });
       } catch (error) {
-        console.log('Error sharing:', error);
+        console.log("Error sharing:", error);
       }
     } else {
       // Fallback to Custom Popover (Desktop)
@@ -276,156 +333,239 @@ const ProductDetails = () => {
   };
 
   // --- Modal Navigation ---
-  const handleFirstToSecond = () => { setShowFirstModal(false); setShowSecondModal(true); };
-  const handleSecondToLogin = () => { setShowSecondModal(false); setShowLoginModal(true); };
-  const handleSecondToSignup = () => { setShowSecondModal(false); setShowSignupModal(true); };
-  const handleBackToSecond = () => { setShowLoginModal(false); setShowSignupModal(false); setShowSecondModal(true); };
+  const handleFirstToSecond = () => {
+    setShowFirstModal(false);
+    setShowSecondModal(true);
+  };
+  const handleSecondToLogin = () => {
+    setShowSecondModal(false);
+    setShowLoginModal(true);
+  };
+  const handleSecondToSignup = () => {
+    setShowSecondModal(false);
+    setShowSignupModal(true);
+  };
+  const handleBackToSecond = () => {
+    setShowLoginModal(false);
+    setShowSignupModal(false);
+    setShowSecondModal(true);
+  };
 
   // --- RENDER ---
-  if (isLoading) return <div className="home-container"><div className="home-app"><QRcode /></div><LoadingState /></div>;
-  if (error) return <div className="home-container"><div className="home-app"><QRcode /></div><ErrorState message={error} onRetry={fetchDetail} /></div>;
-  if (!response?.data) return <div className="home-container"><div className="home-app"><QRcode /></div><ErrorState message="Product not found" onRetry={fetchDetail} /></div>;
+  if (isLoading)
+    return (
+      <div className="home-container">
+        <div className="home-app">
+          <QRcode />
+        </div>
+        <LoadingState />
+      </div>
+    );
+  if (error)
+    return (
+      <div className="home-container">
+        <div className="home-app">
+          <QRcode />
+        </div>
+        <ErrorState message={error} onRetry={fetchDetail} />
+      </div>
+    );
+  if (!response?.data)
+    return (
+      <div className="home-container">
+        <div className="home-app">
+          <QRcode />
+        </div>
+        <ErrorState message="Product not found" onRetry={fetchDetail} />
+      </div>
+    );
 
   return (
     <>
       {/* --- AUTH MODALS --- */}
-      <LoginModalfirst show={showFirstModal} onHide={() => setShowFirstModal(false)} shownext={handleFirstToSecond} />
-      <LoginModalSecond show={showSecondModal} onHide={() => setShowSecondModal(false)} shownext={handleSecondToLogin} shownext1={handleSecondToSignup} />
-      <LoginModallogin show={showLoginModal} onHide={() => setShowLoginModal(false)} shownext={handleBackToSecond} />
-      <LoginModalsignup show={showSignupModal} onHide={() => setShowSignupModal(false)} shownext={handleBackToSecond} />
+      <LoginModalfirst
+        show={showFirstModal}
+        onHide={() => setShowFirstModal(false)}
+        shownext={handleFirstToSecond}
+      />
+      <LoginModalSecond
+        show={showSecondModal}
+        onHide={() => setShowSecondModal(false)}
+        shownext={handleSecondToLogin}
+        shownext1={handleSecondToSignup}
+      />
+      <LoginModallogin
+        show={showLoginModal}
+        onHide={() => setShowLoginModal(false)}
+        shownext={handleBackToSecond}
+      />
+      <LoginModalsignup
+        show={showSignupModal}
+        onHide={() => setShowSignupModal(false)}
+        shownext={handleBackToSecond}
+      />
 
-      <div className="container home-container min-h-screen">
-        <div className="home-app"><QRcode /></div>
-        
-        <div className="product-details-container d-flex align-items-center py-5">
-          
+      <div className="container home-container">
+        <div className="home-app">
+          <QRcode />
+        </div>
+
+        <div className="product-details-container flex sm:flex-row flex-col sm:items-start py-5">
           {/* LEFT: Image */}
-          <div className="product-details-image">
+          <div className="product-details-image flex-1 !h-[400px]">
             {response?.data?.productImages?.[0]?.image ? (
-              <img 
-                src={response.data.productImages[0].image} 
-                alt={response.data.name} 
-                onError={(e) => { e.target.onerror = null; e.target.src = "/placeholder-image.jpg"; }} 
+              <img
+                className="!object-cover w-full h-full"
+                src={response.data.productImages[0].image}
+                alt={response.data.name}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/placeholder-image.jpg";
+                }}
               />
             ) : (
-              <div className="no-image-placeholder"><p>No image available</p></div>
+              <div className="no-image-placeholder">
+                <p>No image available</p>
+              </div>
             )}
           </div>
 
           {/* RIGHT: Content */}
-          <div className="product-details-content">
-            <div className="product-details-content-top">
-              <h2>{response.data.name || "Unnamed Product"}</h2>
-              <p><FaClock /> {response?.data?.createdAt ? formatDateTime(response.data.createdAt) : "Date unavailable"}</p>
-              <p><IoLocationSharp /> {response?.data?.locationValue || "Location unavailable"}</p>
-              <div className="product-details-rating">{getStars(response?.data?.ratings)}</div>
-            </div>
-
-            <div className="product-details-specification">
-              <h3>Description :</h3>
-              <div className="product-details-points">
-                {response?.data?.description ? (
-                  <div dangerouslySetInnerHTML={{ __html: response.data.description }} />
-                ) : <p>No description available</p>}
-              </div>
-            </div>
-
-            {addToCartError && <div className="alert alert-danger mt-3" role="alert">{addToCartError}</div>}
-
-            {/* --- ACTION BUTTONS CONTAINER --- */}
-            <div className="product-details-action-container">
-              
-              {/* 1. Ask Button */}
-              <div className="product-details-actionbtn">
-                <button 
-                  onClick={() => response?.data?.userId && handleAskClick(response.data)}
-                  disabled={!response?.data?.userId}
-                >
-                  Ask
-                </button>
-              </div>
-
-              {/* 2. Add to Cart Button */}
-              <div className="product-details-actionbtn">
-                <button onClick={handleAddToCart} disabled={isAddingToCart}>
-                  {isAddingToCart ? "Adding..." : "Add to Cart"}
-                </button>
-              </div>
-
-              {/* 3. Favorite Button (Icon Only) */}
+          <div className="product-details-content flex-1 sm:!mt-0 !mt-5">
+            <div className="flex justify-end items-center gap-3">
               <div className="product-details-actionbtn">
                 <button
                   className={`icon-only-btn favorite-button ${isFavorite ? "active" : ""}`}
                   onClick={handleFavoriteClick}
-                  title={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+                  title={
+                    isFavorite ? "Remove from Favorites" : "Add to Favorites"
+                  }
                 >
                   {isFavorite ? <IoHeart /> : <IoHeartOutline />}
                 </button>
               </div>
 
-              {/* 4. Share Button (Icon Only + Popover) */}
               <div className="product-details-actionbtn position-relative">
-                <button 
-                  onClick={handleShareTrigger} 
+                <button
+                  onClick={handleShareTrigger}
                   className="icon-only-btn share-button"
                   title="Share"
                 >
-                   {showShareOptions ? <IoClose /> : <IoShareSocialOutline />}
+                  {showShareOptions ? <IoClose /> : <IoShareSocialOutline />}
                 </button>
 
                 {/* Share Menu (Popover/Bottom Sheet) */}
                 {showShareOptions && (
                   <>
                     {/* Overlay for Mobile */}
-                    <div className="share-overlay d-md-none" onClick={() => setShowShareOptions(false)} />
-                    
+                    <div
+                      className="share-overlay d-md-none"
+                      onClick={() => setShowShareOptions(false)}
+                    />
+
                     <div className="custom-share-popover">
                       <div className="share-header d-flex justify-content-between align-items-center mb-3">
-                        <span style={{fontWeight:'700', fontFamily:'Quicksand'}}>Share to</span>
-                        <button className="close-share" style={{background:'none', border:'none', fontSize:'20px', cursor:'pointer'}} onClick={() => setShowShareOptions(false)}>
+                        <span
+                          style={{ fontWeight: "700", fontFamily: "Quicksand" }}
+                        >
+                          Share to
+                        </span>
+                        <button
+                          className="close-share"
+                          style={{
+                            background: "none",
+                            border: "none",
+                            fontSize: "20px",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => setShowShareOptions(false)}
+                        >
                           <IoClose />
                         </button>
                       </div>
 
                       <div className="share-grid">
                         <WhatsappShareButton url={shareUrl} title={shareTitle}>
-                          <div className="share-item"><WhatsappIcon size={40} round /><span>WhatsApp</span></div>
+                          <div className="share-item">
+                            <WhatsappIcon size={40} round />
+                            <span>WhatsApp</span>
+                          </div>
                         </WhatsappShareButton>
 
                         <FacebookShareButton url={shareUrl} quote={shareTitle}>
-                          <div className="share-item"><FacebookIcon size={40} round /><span>Facebook</span></div>
+                          <div className="share-item">
+                            <FacebookIcon size={40} round />
+                            <span>Facebook</span>
+                          </div>
                         </FacebookShareButton>
 
                         <TelegramShareButton url={shareUrl} title={shareTitle}>
-                          <div className="share-item"><TelegramIcon size={40} round /><span>Telegram</span></div>
+                          <div className="share-item">
+                            <TelegramIcon size={40} round />
+                            <span>Telegram</span>
+                          </div>
                         </TelegramShareButton>
 
                         <TwitterShareButton url={shareUrl} title={shareTitle}>
-                          <div className="share-item"><TwitterIcon size={40} round /><span>Twitter</span></div>
+                          <div className="share-item">
+                            <TwitterIcon size={40} round />
+                            <span>Twitter</span>
+                          </div>
                         </TwitterShareButton>
 
                         <LinkedinShareButton url={shareUrl} title={shareTitle}>
-                           <div className="share-item"><LinkedinIcon size={40} round /><span>LinkedIn</span></div>
+                          <div className="share-item">
+                            <LinkedinIcon size={40} round />
+                            <span>LinkedIn</span>
+                          </div>
                         </LinkedinShareButton>
 
-                        <PinterestShareButton url={shareUrl} media={response?.data?.productImages?.[0]?.image || ""} description={shareTitle}>
-                           <div className="share-item"><PinterestIcon size={40} round /><span>Pinterest</span></div>
+                        <PinterestShareButton
+                          url={shareUrl}
+                          media={
+                            response?.data?.productImages?.[0]?.image || ""
+                          }
+                          description={shareTitle}
+                        >
+                          <div className="share-item">
+                            <PinterestIcon size={40} round />
+                            <span>Pinterest</span>
+                          </div>
                         </PinterestShareButton>
 
                         <RedditShareButton url={shareUrl} title={shareTitle}>
-                           <div className="share-item"><RedditIcon size={40} round /><span>Reddit</span></div>
+                          <div className="share-item">
+                            <RedditIcon size={40} round />
+                            <span>Reddit</span>
+                          </div>
                         </RedditShareButton>
 
                         <EmailShareButton url={shareUrl} subject={shareTitle}>
-                           <div className="share-item"><EmailIcon size={40} round /><span>Email</span></div>
+                          <div className="share-item">
+                            <EmailIcon size={40} round />
+                            <span>Email</span>
+                          </div>
                         </EmailShareButton>
                       </div>
 
                       <div className="copy-link-section">
                         <div className="copy-input-container">
                           <input type="text" readOnly value={shareUrl} />
-                          <button onClick={handleCopyLink} className={isCopied ? "copy-btn copied" : "copy-btn"}>
-                            {isCopied ? <><IoCheckmarkCircleOutline /> Copied</> : <><IoCopyOutline /> Copy</>}
+                          <button
+                            onClick={handleCopyLink}
+                            className={
+                              isCopied ? "copy-btn copied" : "copy-btn"
+                            }
+                          >
+                            {isCopied ? (
+                              <>
+                                <IoCheckmarkCircleOutline /> Copied
+                              </>
+                            ) : (
+                              <>
+                                <IoCopyOutline /> Copy
+                              </>
+                            )}
                           </button>
                         </div>
                       </div>
@@ -434,15 +574,83 @@ const ProductDetails = () => {
                 )}
               </div>
 
-              {/* 5. Report Button (Icon Only) */}
               <div className="product-details-actionbtn">
-                <button onClick={handleReport} className="icon-only-btn report-button" title="Report Product">
+                <button
+                  onClick={handleReport}
+                  className="icon-only-btn report-button"
+                  title="Report Product"
+                >
                   <IoFlagOutline />
                 </button>
               </div>
+            </div>
 
-              {id && <ListModal isOpen={showListModal} onClose={() => setShowListModal(false)} productId={id} />}
-            
+            <div className="product-details-content-top">
+              <h2 className="mt-2 !border-b-0">{response.data.name || "Unnamed Product"}</h2>
+              <p>
+                <FaClock />{" "}
+                {response?.data?.createdAt
+                  ? formatDateTime(response.data.createdAt)
+                  : "Date unavailable"}
+              </p>
+              <p>
+                <IoLocationSharp />{" "}
+                {response?.data?.locationValue || "Location unavailable"}
+              </p>
+              <div className="product-details-rating [&>div]:flex [&>div]:items-center [&>div]:gap-1">
+                {getStars(response?.data?.ratings)}
+              </div>
+            </div>
+
+            <div className="product-details-specification">
+              <h3>Description :</h3>
+              <div className="product-details-points">
+                {response?.data?.description ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: response.data.description,
+                    }}
+                  />
+                ) : (
+                  <p>No description available</p>
+                )}
+              </div>
+            </div>
+
+            {addToCartError && (
+              <div className="alert alert-danger mt-3" role="alert">
+                {addToCartError}
+              </div>
+            )}
+
+            {/* --- ACTION BUTTONS CONTAINER --- */}
+            <div className="product-details-action-container">
+              {/* 1. Ask Button */}
+              <div className="product-details-actionbtn relative">
+                <button className="before:absolute before:inset-[-4px] before:rounded-full before:border-2 before:border-[#f85c70] before:content-[''] flex gap-2 items-center bg-white hover:!bg-[#f85c70] !rounded-full inset-3 !p-1 !border-[0.5px] !border-[#f85c70] ring-1 ring-[#f85c70]"
+                  onClick={() =>
+                    response?.data?.userId && handleAskClick(response.data)
+                  }
+                  disabled={!response?.data?.userId}
+                > 
+                <FaMessage />
+                  Chat
+                </button>
+              </div>
+
+              {/* 2. Add to Cart Button */}
+              <div className="product-details-actionbtn relative">
+                <button onClick={handleAddToCart} disabled={isAddingToCart} className="before:absolute hover:before:inset-[-4px] before:inset-[0px] before:rounded-full before:border-2 before:border-[#f85c70] before:content-[''] flex gap-2 items-center hover:!bg-white !bg-[#f85c70] hover:!text-[#f85c70] !text-white !rounded-full inset-3 !p-1 !border !border-[#f85c70] ring-1 ring-[#f85c70]">
+                  {isAddingToCart ? "Adding..." : "Add to Cart"}
+                </button>
+              </div>
+              {id && (
+                <ListModal
+                  isOpen={showListModal}
+                  onClose={() => setShowListModal(false)}
+                  productId={id}
+                />
+              )}
             </div>
           </div>
         </div>

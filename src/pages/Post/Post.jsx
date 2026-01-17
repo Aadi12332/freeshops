@@ -16,6 +16,8 @@ import "react-quill/dist/quill.snow.css";
 import { Form } from "react-bootstrap";
 import { ClipLoader } from "react-spinners";
 import styles from "../../css/post.module.css";
+import { AiOutlineInfoCircle, AiOutlineClose } from "react-icons/ai";
+
 import Swal from "sweetalert2";
 // UPDATED IMPORTS: Removed @vis.gl/react-google-maps
 // Added @react-google-maps/api imports
@@ -31,6 +33,30 @@ const MAX_IMAGES = 5;
 const MAX_SIZE_MB = 3;
 const ALLOWED_TYPES = ["image/jpeg", "image/jpg", "image/png"];
 const MAX_VIDEO_SIZE_MB = 20;
+export const JobGuidelineBanner = () => {
+  const [show, setShow] = useState(true);
+
+  if (!show) return null;
+
+  return (
+    <div className="flex items-center justify-between rounded-md bg-[#e2584590] px-4 py-2 mb-5 text-sm text-white">
+      <div className="flex items-center gap-2">
+        <AiOutlineInfoCircle className="text-lg" />
+        <p>
+          Before posting a job, please read the{" "}
+          <span className="cursor-pointer underline font-medium">
+            Prohibited jobs guidelines
+          </span>
+          .
+        </p>
+      </div>
+
+      <button onClick={() => setShow(false)}>
+        <AiOutlineClose className="text-lg hover:opacity-80" />
+      </button>
+    </div>
+  );
+};
 
 const Post = () => {
   const navigate = useNavigate();
@@ -397,10 +423,12 @@ const Post = () => {
 
   return (
     <>
-      <div className="container px-4 py-4 my-3 ">
-        <div className="d-lg-block d-none">
+      <div className="">
+        <div className="d-lg-block d-none mb-5">
           <QRcode />
         </div>
+        <JobGuidelineBanner />
+
         <form onSubmit={createPost}>
           <div className="mb-3">
             <div className={styles.label_container}>
@@ -594,7 +622,7 @@ const Post = () => {
                   {images.length < MAX_IMAGES && (
                     <label
                       style={{ height: 200, width: 200 }}
-                      className="border-2 border-dashed border-green-500 rounded-md flex flex-col items-center justify-center cursor-pointer text-green-600 hover:bg-green-50 transition"
+                      className="border-2 border-dashed border-[#e5e7eb] rounded-md flex flex-col items-center justify-center cursor-pointer text-[#6b7280] hover:bg-[#f3f4f6] transition"
                     >
                       <span className="text-3xl leading-none">+</span>
                       <p className="text-xs mt-1">Add photo</p>
@@ -628,7 +656,7 @@ const Post = () => {
               <div className="w-full">
                 <label
                   style={{ height: 200, width: 200 }}
-                  className="border-2 border-dashed border-green-500 rounded-md flex flex-col items-center justify-center cursor-pointer text-green-600 hover:bg-green-50 transition relative"
+                  className="border-2 border-dashed border-[#e5e7eb] rounded-md flex flex-col items-center justify-center cursor-pointer text-[#6b7280] hover:bg-[#f3f4f6] transition relative"
                 >
                   {!loading && !video && (
                     <>
@@ -650,7 +678,7 @@ const Post = () => {
                 </label>
 
                 {video && !loading && (
-                  <p className="text-sm text-green-600 mt-2">
+                  <p className="text-sm text-[#6b7280] mt-2">
                     Video uploaded successfully ✔
                   </p>
                 )}

@@ -1,7 +1,6 @@
 /** @format */
 
 .findjob-container {
-  width: 90%;
   margin: auto;
   margin-top: 1rem;
   max-width: 1400px;
@@ -81,17 +80,17 @@
 }
 
 .findjob-job-right-btn {
-  width: 150px;
+  width: 120px;
   height: auto;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
   background: #e2584533;
   align-self: flex-start;
 }
 
 .findjob-job-right-btn h6 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 25px;
   color: #e25845;
   margin: 0;
@@ -281,13 +280,6 @@
   color: #666;
   font-family: Quicksand, sans-serif;
   font-size: 18px;
-}
-
-/* Desktop (1200px+) - Keep original styles */
-@media (min-width: 1200px) {
-  .findjob-container {
-    width: 85%;
-  }
 }
 
 /* Large Desktop (992px - 1199px) */

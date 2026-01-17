@@ -96,10 +96,10 @@ const NotificationPopup = () => {
     <div className="notification-wrapper" ref={popupRef}>
       <div
         onClick={handleTogglePopup}
-        className="logged-in-nav-item text-[#e25845] flex items-center mb-1 cursor-pointer"
+        className="logged-in-nav-item text-[#e25845] flex items-center cursor-pointer gap-2 justify-between"
       >
-        <img src={notification_img} className="" alt="notification" />
-        <span className="text-[12.8px]">inbox</span>
+        <img src={notification_img} className="w-[20px] h-[22px]" alt="notification" />
+        <span className="text-[12px] mb-0">Inbox</span>
       </div>
 
       {isOpen && (
