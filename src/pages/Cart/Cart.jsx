@@ -51,14 +51,26 @@ const CheckoutForm = ({ cartData }) => {
   return (
     <div className="cart-summary">
       <div className="summary-box">
-        <h2>Order Summary</h2>
+        <h2 className="!my-0">Order Summary</h2>
         <div className="summary-row">
           {/* <span>Subtotal</span>
           <span> $ {cartData.subTotal} </span> */}
         </div>
+        <div className="summary-total !border-0">
+          <span>Processing fee</span>
+          <span> $ 1 </span>
+        </div>
+        <div className="summary-total !border-0">
+          <span>Taxes</span>
+          <span> $ 0 </span>
+        </div>
         <div className="summary-total">
           <span>Processing fee</span>
           <span> $ 1 </span>
+        </div>
+        <div className="flex items-center gap-2 mt-5">
+          <input type="checkbox" name="" id="" className="accent-[#ff3333] scale-150" />
+          <span className="leading-[1.2]">You agree to our <a href="" className="text-[#ff3333]">terms and conditions</a></span>
         </div>
         <button
           className="checkout-btn"
@@ -137,7 +149,7 @@ const CartPage = () => {
 
   return (
     <div className="cart-page">
-      <div className="cart-container">
+      <div className="cart-container !max-w-[992px] !mt-10">
         <h1>Shopping Cart ({cartData.quantity || 1} item)</h1>
         <div className="cart-content">
           <div className="cart-items">

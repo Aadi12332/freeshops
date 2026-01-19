@@ -94,7 +94,13 @@
 }
 
 .cart-summary {
+  width: 400px;
+}
+
+@media (max-width: 1024px) {
+  .cart-summary {
   width: 300px;
+}
 }
 
 .summary-box {
