@@ -248,8 +248,13 @@
   -ms-overflow-style: none;     /* IE 10+ */
 }
 
-.custom-swiper::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari, Edge */
+.scroll-hide {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE 10+ */
+}
+
+.custom-swiper::-webkit-scrollbar, .scroll-hide::-webkit-scrollbar {
+  display: none;    
 }
 
 .navbar-bottom-job h6 {

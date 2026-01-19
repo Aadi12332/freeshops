@@ -197,7 +197,7 @@ const FindJobs = () => {
           </div>
 
           <div className="flex items-start gap-3 mt-5">
-            <div className="findjob-jobs flex-1 !mt-0">
+            <div className="findjob-jobs flex-1 !mt-0 max-h-[calc(100vh-200px)] overflow-y-auto scroll-hide py-1">
               <div className="findjob-jobs-div !mt-0">
                 {isLoadingJobs ? (
                   <div

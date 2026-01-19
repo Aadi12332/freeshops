@@ -75,7 +75,7 @@ const MyListing = () => {
   }
 
   return (
-    <div className="mylisting-container min-h-screen">
+    <div className="mylisting-container min-h-screen container">
       <QRcode />
 
       {/* 🔹 Header with Post Product Button */}
