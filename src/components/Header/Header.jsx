@@ -664,7 +664,7 @@ const Header = () => {
                     className="rounded-3 mb-4 img-fluid"
                     style={{ maxWidth: "220px", width: "100%", height: "auto" }}
                   />
-                  <div className="d-flex justify-content-center gap-3 flex-nowrap flex-wrap">
+                  <div className="d-flex justify-content-center gap-3 flex-wrap">
                     <a
                       href="#!"
                       onClick={(e) => e.preventDefault()}
